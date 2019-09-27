@@ -1,0 +1,39 @@
+.LeftNavLogo {
+  height: 75px;
+  text-align: center;
+  line-height: 75px;
+  /*background-color: red;*/
+  overflow: hidden;
+  box-shadow: 0 1px 9px -3px rgba(0,0,0,.2);
+}
+.LeftNavLogoSpan {
+  margin-left: 10px;
+}
+
+
+.themeChangeContent {
+  position: fixed;
+  bottom: 15px;
+  margin-left: 24px;
+  transition: all .3s;
+  /*overflow: hidden;*/
+  /*background-color: pink;*/
+}
+.T_C_C_switch {
+  cursor: pointer;
+  /*transition: all .36s;*/
+  /*background-color: red;*/
+  animation: leftSwitchCardAnimation .3s;
+}
+
+/* 从左到右 */
+@keyframes leftSwitchCardAnimation {
+  from {
+    transform: translateX(-100px);
+    animation-timing-function: linear;
+  }
+  to {
+    transform: translateX(5px);
+    animation-timing-function: linear;
+  }
+}
