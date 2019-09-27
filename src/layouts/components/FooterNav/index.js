@@ -15,7 +15,7 @@ class FooterNav extends  Component{
   render() {
     return (
       <Footer style={{ textAlign: 'center' }}>
-        Ant Design ©2018 Created by Ant UED
+        An UI 模版 ©2019 Created
       </Footer>
     );
   }

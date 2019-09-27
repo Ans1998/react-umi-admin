@@ -1,6 +1,8 @@
 // import styles from './index.css';
 import React, {Component} from 'react'
 
+import {Link} from 'umi';
+
 import HeaderNav from './components/HeaderNav'
 import LeftNav from './components/LeftNav'
 import FooterNav from './components/FooterNav'
@@ -64,6 +66,12 @@ class BasicLayout extends  Component{
               routes.map((item, key) => {
                 // console.log('item', item);
                 return item.path ? (<Breadcrumb.Item key={key} href={item.path}>{item.breadcrumbName}</Breadcrumb.Item>) : (<Breadcrumb.Item key={key}>{item.breadcrumbName}</Breadcrumb.Item>);
+                // return item.path ?
+                //   (<Breadcrumb.Item key={key}>
+                //     <Link to={item.path}>{item.breadcrumbName}</Link>
+                //   </Breadcrumb.Item>)
+                //   :
+                //   (<Breadcrumb.Item key={key}>{item.breadcrumbName}</Breadcrumb.Item>);
               })
             }
           </Breadcrumb>

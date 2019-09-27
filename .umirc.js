@@ -28,6 +28,38 @@ export default {
       path: '/',
       component: './../layouts/',
       routes: [
+        { path: '/form/basics-form', component: './form/basics/index/',
+          breadcrumbArr: [
+            {
+              path: '/',
+              breadcrumbName: '首页',
+            },
+            {
+              path: '',
+              breadcrumbName: '表单页',
+            },
+            {
+              path: '',
+              breadcrumbName: '基础表单',
+            }
+          ]
+        },
+        { path: '/form/advanced-form', component: './form/advanced/index/',
+          breadcrumbArr: [
+            {
+              path: '/',
+              breadcrumbName: '首页',
+            },
+            {
+              path: '',
+              breadcrumbName: '表单页',
+            },
+            {
+              path: '',
+              breadcrumbName: '高级表单',
+            }
+          ]
+        },
         { path: '/', component: './index/pages/index/',
           breadcrumbArr: [
           {

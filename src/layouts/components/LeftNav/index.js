@@ -35,6 +35,21 @@ const menuSrc = [
       ]
   },
   {
+    key: '/form',
+    icon: 'form',
+    title: '表单页',
+    children: [
+      {
+        key: '/form/basics-form',
+        title: '基础表单'
+      },
+      {
+        key: '/form/advanced-form',
+        title: '高级表单'
+      }
+    ]
+  },
+  {
     key: '/order',
     icon: 'shopping',
     title: '订单管理',
