@@ -10,7 +10,10 @@ import FooterNav from './components/FooterNav'
 import Login from '../pages/login/pages/index'
 
 import { connect } from 'dva';
-import { Layout, Breadcrumb  } from 'antd';
+import { Layout, Breadcrumb, ConfigProvider, Empty } from 'antd';
+// import configLocale from 'antd/es/locale/en_US'; // 英文
+import configLocale from 'antd/es/locale/zh_CN'; // 中文
+
 const { Content } = Layout;
 
 class BasicLayout extends  Component{
@@ -38,7 +41,10 @@ class BasicLayout extends  Component{
   // 组件卸载
   componentWillUnmount() {
   }
-
+  // 全局空状态
+  publicEmpty = () => {
+    return (<Empty/>)
+  };
   render() {
     // 面包屑数据赋值
     let routes = [];
@@ -54,6 +60,7 @@ class BasicLayout extends  Component{
       return (<Login></Login>)
     }
     return (
+      <ConfigProvider locale={configLocale} renderEmpty={this.publicEmpty}>
       <Layout>
         {/*左边导航栏*/}
         <LeftNav collapsed={this.state.collapsed} data={this.props}></LeftNav>
@@ -65,7 +72,7 @@ class BasicLayout extends  Component{
             {
               routes.map((item, key) => {
                 // console.log('item', item);
-                return item.path ? (<Breadcrumb.Item key={key} href={item.path}>{item.breadcrumbName}</Breadcrumb.Item>) : (<Breadcrumb.Item key={key}>{item.breadcrumbName}</Breadcrumb.Item>);
+                return item.path ? (<Breadcrumb.Item key={key} href={'/#'+item.path}>{item.breadcrumbName}</Breadcrumb.Item>) : (<Breadcrumb.Item key={key}>{item.breadcrumbName}</Breadcrumb.Item>);
                 // return item.path ?
                 //   (<Breadcrumb.Item key={key}>
                 //     <Link to={item.path}>{item.breadcrumbName}</Link>
@@ -90,6 +97,7 @@ class BasicLayout extends  Component{
           <FooterNav></FooterNav>
         </Layout>
       </Layout>
+      </ConfigProvider>
     );
   }
 }

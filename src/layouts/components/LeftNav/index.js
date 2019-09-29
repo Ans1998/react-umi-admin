@@ -200,7 +200,7 @@ const menuSrc = [
             }
           </Menu>
           {
-            collapsed ? null : this.themeChangeRender()
+            collapsed ? null : null
           }
         </Sider>
     );

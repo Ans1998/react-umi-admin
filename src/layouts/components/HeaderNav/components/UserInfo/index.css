@@ -1,0 +1,32 @@
+/*右边用户信息*/
+.H_R_L_right {
+  height: 75px;
+  min-width: 100px;
+  padding-right: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  /*background-color: green;*/
+}
+.H_R_L_right:hover {
+  cursor: pointer;
+  background-color: #f9f9fc;
+  color: #1890ff;
+}
+.H_R_L_R_hint {
+  color: rgb(153, 153, 153);
+}
+.H_R_L_R_userName {
+  margin: 0 5px;
+}
+/*气泡*/
+.userInfoContent {
+  /*background-color: red;*/
+}
+.U_C_list {}
+.U_C_list:hover {
+  cursor: pointer;
+  /*background-color: #f9f9fc;*/
+  color: #1890ff;
+}

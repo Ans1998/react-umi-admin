@@ -11,18 +11,7 @@ class HeaderBadge extends  Component{
       badgeVisible: false,
       loadingList: true,
       data: [
-        {
-          title: 'Ant Design Title 1',
-        },
-        {
-          title: 'Ant Design Title 2',
-        },
-        {
-          title: 'Ant Design Title 3',
-        },
-        {
-          title: 'Ant Design Title 4',
-        }
+
       ],
       current: 3
     };
@@ -51,7 +40,7 @@ class HeaderBadge extends  Component{
           itemLayout="horizontal"
           dataSource={this.state.data}
           loading={this.state.loadingList}
-          locale={{emptyText: '暂无数据'}}
+          // locale={{emptyText: '暂无数据'}}
           pagination={{
             defaultCurrent: 1,
             defaultPageSize: 5,

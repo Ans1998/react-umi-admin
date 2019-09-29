@@ -79,7 +79,7 @@ export default {
           Routes: ['./src/routes/authRoute/index.js'],
           breadcrumbArr: [
             {
-              path: 'admin',
+              path: '/user/admin',
               breadcrumbName: '用户管理',
             },
             {

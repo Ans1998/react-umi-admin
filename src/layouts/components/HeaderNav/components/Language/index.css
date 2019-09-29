@@ -1,0 +1,36 @@
+/*中间语言设置*/
+.H_R_L_middle {
+  width: 75px;
+  height: 75px;
+  display: flex;
+  cursor: pointer;
+  align-items: center;
+  justify-content: center;
+  /*background-color: red;*/
+}
+.H_R_L_middle:hover{
+  background-color: #f9f9fc;
+}
+/*气泡*/
+.languageContent {
+  min-width: 160px;
+  /*background-color: red;*/
+}
+.L_C_list {
+  padding: 0 4px;
+  /*background-color: pink;*/
+}
+.L_C_L_selected {
+  background-color: #f9f9fc;
+  color: #1890ff;
+}
+.L_C_list:hover {
+  cursor: pointer;
+  color: #1890ff;
+}
+.L_C_list:not(:first-child) {
+  margin-top: 10px;
+}
+.L_C_L_title {
+  margin-left: 10px;
+}
