@@ -50,6 +50,21 @@ const menuSrc = [
     ]
   },
   {
+    key: '/list',
+    icon: 'form',
+    title: '列表页',
+    children: [
+      {
+        key: '/list/basics-list',
+        title: '基础列表'
+      },
+      {
+        key: '/list/advanced-list',
+        title: '高级列表'
+      }
+    ]
+  },
+  {
     key: '/order',
     icon: 'shopping',
     title: '订单管理',
@@ -75,7 +90,8 @@ const menuSrc = [
       ]
   }
   ];
-  class LeftNav extends  Component{
+
+class LeftNav extends  Component{
   // 构造函数
   constructor(props) {
     super(props);
@@ -171,9 +187,6 @@ const menuSrc = [
                theme={this.state.theme}
                breakpoint="lg"
                onBreakpoint={this.state.isMobile ? this.onCollapseChange : null}
-               style={{
-                 height: '100vh'
-               }}
         >
           <Row className={styles.LeftNavLogo} >
             <Col>
@@ -200,7 +213,7 @@ const menuSrc = [
             }
           </Menu>
           {
-            collapsed ? null : null
+            collapsed ? null : this.themeChangeRender()
           }
         </Sider>
     );

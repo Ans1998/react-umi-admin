@@ -29,6 +29,7 @@ export default {
       component: './../layouts/',
       routes: [
         { path: '/form/basics-form', component: './form/basics/index/',
+          authority: ['admin', 'user'],
           breadcrumbArr: [
             {
               path: '/',
@@ -45,6 +46,7 @@ export default {
           ]
         },
         { path: '/form/advanced-form', component: './form/advanced/index/',
+          authority: ['admin', 'user'],
           breadcrumbArr: [
             {
               path: '/',
@@ -60,7 +62,42 @@ export default {
             }
           ]
         },
+        { path: '/list/advanced-list', component: './list/advanced/index/',
+          authority: ['admin', 'user'],
+          breadcrumbArr: [
+            {
+              path: '/',
+              breadcrumbName: '首页',
+            },
+            {
+              path: '',
+              breadcrumbName: '列表页',
+            },
+            {
+              path: '',
+              breadcrumbName: '高级列表',
+            }
+          ]
+        },
+        { path: '/list/basics-list', component: './list/basics/index/',
+          authority: ['admin', 'user'],
+          breadcrumbArr: [
+            {
+              path: '/',
+              breadcrumbName: '首页',
+            },
+            {
+              path: '',
+              breadcrumbName: '列表页',
+            },
+            {
+              path: '',
+              breadcrumbName: '基础列表',
+            }
+          ]
+        },
         { path: '/', component: './index/pages/index/',
+          authority: ['admin', 'user'],
           breadcrumbArr: [
           {
               path: '',
@@ -77,6 +114,7 @@ export default {
         // },
         { path: '/user/admin', component: './user/pages/admin',
           Routes: ['./src/routes/authRoute/index.js'],
+          authority: ['admin', 'user'],
           breadcrumbArr: [
             {
               path: '/user/admin',
@@ -89,6 +127,7 @@ export default {
         },
         { path: '/user/list', component: './user/pages/list',
           Routes: ['./src/routes/authRoute/index.js'],
+          authority: ['admin', 'user'],
           breadcrumbArr: [
             {
               breadcrumbName: '用户管理',
@@ -100,6 +139,7 @@ export default {
         },
         { path: '/test', component: './test/pages/index/',
           Routes: ['./src/routes/authRoute/index.js'] ,
+          authority: ['admin', 'user'],
           breadcrumbArr: [
             {
               path: '',

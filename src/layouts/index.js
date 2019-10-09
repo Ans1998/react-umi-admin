@@ -1,5 +1,7 @@
-// import styles from './index.css';
+import styles from './index.css'
 import React, {Component} from 'react'
+import withRouter from 'umi/withRouter';
+import { TransitionGroup, CSSTransition } from "react-transition-group";
 
 import {Link} from 'umi';
 
@@ -61,7 +63,11 @@ class BasicLayout extends  Component{
     }
     return (
       <ConfigProvider locale={configLocale} renderEmpty={this.publicEmpty}>
-      <Layout>
+      <Layout
+        style={{
+          minHeight: '100vh'
+        }}
+      >
         {/*左边导航栏*/}
         <LeftNav collapsed={this.state.collapsed} data={this.props}></LeftNav>
         <Layout>
@@ -86,12 +92,14 @@ class BasicLayout extends  Component{
           <Content
             style={{
               margin: '24px 16px',
-              padding: 24,
-              background: '#fff',
-              minHeight: 280,
+              minHeight: 280
             }}
           >
-            { this.props.children }
+            <TransitionGroup>
+              <CSSTransition key={this.props.location.pathname} classNames="fade" timeout={300}>
+                { this.props.children }
+              </CSSTransition>
+            </TransitionGroup>
           </Content>
           {/*底部*/}
           <FooterNav></FooterNav>
@@ -112,4 +120,4 @@ const mapDispatchToProps = (dispatch, props) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(BasicLayout)
+export default withRouter(connect(mapStateToProps, mapDispatchToProps)(BasicLayout))
