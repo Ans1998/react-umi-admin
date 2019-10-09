@@ -2,21 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a9867fc-85ac-4205-b935-88b47c075602" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/pages/form/advanced/components/TableForm/index.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/pages/form/advanced/components/TableForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.umirc.js" beforeDir="false" afterPath="$PROJECT_DIR$/.umirc.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/components/LeftNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/LeftNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/advanced/components/Main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/advanced/components/Test/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/advanced/components/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/advanced/components/Test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/advanced/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/advanced/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/advanced/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/advanced/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/basics/components/Main/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/basics/components/Test/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/basics/components/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/basics/components/Test/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/form/basics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/form/basics/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/list/basics/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/list/basics/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,21 +18,35 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/pages/list/basics/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320">
-              <caret line="371" column="28" lean-forward="true" selection-start-line="371" selection-start-column="28" selection-end-line="371" selection-end-column="28" />
+            <state relative-caret-position="372">
+              <caret line="227" column="14" lean-forward="true" selection-start-line="227" selection-start-column="14" selection-end-line="227" selection-end-column="14" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
-                <element signature="e#6398#7310#0" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/list/basics/index.css">
+        <entry file="file://$PROJECT_DIR$/src/pages/list/basics/components/SearchForm/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="112">
-              <caret line="4" column="19" selection-start-line="4" selection-start-column="19" selection-end-line="4" selection-end-column="19" />
+            <state relative-caret-position="3444">
+              <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
+              <folding>
+                <element signature="e#78#161#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/list/basics/components/AddForm/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="448">
+              <caret line="19" column="12" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="19" selection-end-column="12" />
+              <folding>
+                <element signature="e#77#107#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -71,6 +71,9 @@
       <find>secondCity</find>
       <find>cities</find>
       <find>formItemPublicLayout</find>
+      <find>Form</find>
+      <find>onSelectChange</find>
+      <find>selectedRowKeys</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -79,9 +82,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/pages/orders/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/orders/models/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/orders/components/Main/index.js" />
         <option value="$PROJECT_DIR$/src/pages/users/pages/adminUser/index.css" />
         <option value="$PROJECT_DIR$/src/pages/users/pages/adminUser/components/index.css" />
         <option value="$PROJECT_DIR$/src/pages/users/pages/adminUser/components/Main/index.css" />
@@ -129,6 +129,9 @@
         <option value="$PROJECT_DIR$/.umirc.js" />
         <option value="$PROJECT_DIR$/src/pages/form/advanced/index.js" />
         <option value="$PROJECT_DIR$/src/pages/list/basics/index.css" />
+        <option value="$PROJECT_DIR$/src/pages/list/basics/components/AddForm/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/list/basics/components/EditForm/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/list/basics/components/SearchForm/index.js" />
         <option value="$PROJECT_DIR$/src/pages/list/basics/index.js" />
       </list>
     </option>
@@ -162,28 +165,7 @@
               <item name="umi" type="b2602c69:ProjectViewProjectNode" />
               <item name="umi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="layouts" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-              <item name="basics" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="umi" type="b2602c69:ProjectViewProjectNode" />
@@ -199,6 +181,35 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="list" type="462c0819:PsiDirectoryNode" />
               <item name="basics" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="basics" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="basics" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="basics" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="SearchForm" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -270,12 +281,12 @@
       <workItem from="1569982130713" duration="5613000" />
       <workItem from="1570449156602" duration="969000" />
       <workItem from="1570493325770" duration="24766000" />
-      <workItem from="1570580917875" duration="4855000" />
+      <workItem from="1570580917875" duration="11509000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="211335000" />
+    <option name="totallyTimeSpent" value="217989000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -288,9 +299,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17965654" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17965654" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -336,13 +346,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/pages/users/components/Main/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/pages/order/pages/index/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/login/pages/index/index.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/index/pages/index/index.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -713,13 +716,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/list/basics/components/EditForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="600">
+          <caret line="43" selection-start-line="43" selection-end-line="43" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/list/basics/components/AddForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="19" column="12" lean-forward="true" selection-start-line="15" selection-start-column="6" selection-end-line="19" selection-end-column="12" />
+          <folding>
+            <element signature="e#77#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/list/basics/components/SearchForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="3444">
+          <caret line="132" column="25" lean-forward="true" selection-start-line="132" selection-start-column="25" selection-end-line="132" selection-end-column="25" />
+          <folding>
+            <element signature="e#78#161#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/list/basics/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320">
-          <caret line="371" column="28" lean-forward="true" selection-start-line="371" selection-start-column="28" selection-end-line="371" selection-end-column="28" />
+        <state relative-caret-position="372">
+          <caret line="227" column="14" lean-forward="true" selection-start-line="227" selection-start-column="14" selection-end-line="227" selection-end-column="14" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
-            <element signature="e#6398#7310#0" />
           </folding>
         </state>
       </provider>
