@@ -58,7 +58,9 @@ class EditForm extends  Component{
   constructor(props) {
     super(props);
     this.state = {
+      current: 0
     };
+    console.log(props)
   }
   // 对话框底部按钮渲染
   footerRender = () => {
@@ -74,7 +76,7 @@ class EditForm extends  Component{
           }
         </Col>
         <Col lg={4} md={4} sm={6} xs={6}>
-          <Button key="back" onClick={this.handleCancel}>
+          <Button key="back" onClick={this.props.handleCancel}>
             取消
           </Button>
         </Col>
@@ -94,6 +96,10 @@ class EditForm extends  Component{
       </Row>
     )
   };
+  // 在组件接收到了新的 props 或者 state 即将进行重新渲染后
+  componentDidUpdate(prevProps, prevState, snapshot) {
+    // console.log(this.props)
+  }
   render() {
     const formItemPublicLayout = {
       labelCol: { span: 6 },
@@ -103,8 +109,8 @@ class EditForm extends  Component{
       <Form onSubmit={this.handleSubmit} {...formItemPublicLayout}>
         <Modal
           title="商品编辑"
-          onCancel={this.handleCancel}
-          visible={this.state.visible}
+          onCancel={this.props.handleCancel}
+          visible={this.props.visible}
           footer={this.footerRender()}
         >
           {
@@ -146,7 +152,7 @@ class EditForm extends  Component{
           <Form.Item label="商品名称">
             {
               getFieldDecorator('productName', {
-                initialValue: this.state.item.productName,
+                initialValue: this.props.item.productName,
                 rules: [
                   {
                     required: true,
@@ -164,7 +170,7 @@ class EditForm extends  Component{
           <Form.Item label="商品总价">
             {
               getFieldDecorator('productSum', {
-                initialValue: this.state.item.productSum,
+                initialValue: this.props.item.productSum,
                 rules: [
                   {
                     type: 'number',
@@ -183,7 +189,7 @@ class EditForm extends  Component{
           <Form.Item label="商品描述">
             {
               getFieldDecorator('productDescribe', {
-                initialValue: this.state.item.productDescribe,
+                initialValue: this.props.item.productDescribe,
                 rules: [
                   {
                     required: true,
@@ -208,7 +214,7 @@ class EditForm extends  Component{
           <Form.Item label="商品发货地址">
             {
               getFieldDecorator('productSendAddress', {
-                // initialValue: this.state.item.productSendAddress,
+                // initialValue: this.props.item.productSendAddress,
                 rules: [
                   {
                     type: 'array',
@@ -218,7 +224,7 @@ class EditForm extends  Component{
                   }
                 ],
               })(
-                <Cascader options={options} onChange={this.handleCascadeChange} placeholder="请选择发货地址" />
+                <Cascader options={options} placeholder="请选择发货地址" />
               )
             }
           </Form.Item>
@@ -227,7 +233,7 @@ class EditForm extends  Component{
           <Form.Item label="商品发货时间">
             {
               getFieldDecorator('productSendTime', {
-                // initialValue: this.state.item.productSendTime,
+                // initialValue: this.props.item.productSendTime,
                 rules: [
                   {
                     required: true,
@@ -235,7 +241,7 @@ class EditForm extends  Component{
                   }
                 ],
               })(
-                <DatePicker showTime placeholder="请输入商品发货时间" onChange={this.handleProductSendTime} onOk={this.handleProductSendTimeOk} />
+                <DatePicker showTime placeholder="请输入商品发货时间"  />
               )
             }
           </Form.Item>
@@ -244,7 +250,7 @@ class EditForm extends  Component{
           <Form.Item label="商品收获地址">
             {
               getFieldDecorator('productPlaceOfReceipt', {
-                // initialValue: this.state.item.productPlaceOfReceipt,
+                // initialValue: this.props.item.productPlaceOfReceipt,
                 rules: [
                   {
                     type: 'array',
@@ -254,7 +260,7 @@ class EditForm extends  Component{
                   }
                 ],
               })(
-                <Cascader options={options} onChange={this.handlePlaceOfReceiptCascadeChange} placeholder="请选择商品收获地址" />
+                <Cascader options={options}  placeholder="请选择商品收获地址" />
               )
             }
           </Form.Item>
@@ -263,7 +269,7 @@ class EditForm extends  Component{
           <Form.Item label="商品收货时间">
             {
               getFieldDecorator('productTimeOfReceipt', {
-                // initialValue: this.state.item.productTimeOfReceipt,
+                // initialValue: this.props.item.productTimeOfReceipt,
                 rules: [
                   {
                     required: true,
@@ -271,7 +277,7 @@ class EditForm extends  Component{
                   }
                 ],
               })(
-                <DatePicker showTime placeholder="请输入商品收货时间" onChange={this.handleProductTimeOfReceipt} onOk={this.handleProductTimeOfReceiptOk} />
+                <DatePicker showTime placeholder="请输入商品收货时间" />
               )
             }
           </Form.Item>
@@ -287,7 +293,7 @@ class EditForm extends  Component{
           <Form.Item label="商品状态">
             {
               getFieldDecorator('productState', {
-                initialValue: this.state.item.productState,
+                initialValue: this.props.item.productState,
                 rules: [
                   {
                     required: true,
@@ -342,16 +348,14 @@ class EditForm extends  Component{
           confirmLoading: false,
         });
       }
+      return values
     });
 
   };
   // 取消
   handleCancel = () => {
-    console.log('Clicked cancel button');
-    this.setState({
-      // current: 0,
-      visible: false,
-    });
+    console.log('修改的触发');
+    return false
   };
 }
 
@@ -364,5 +368,4 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
   }
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(EditForm)
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'editForm' })(EditForm))

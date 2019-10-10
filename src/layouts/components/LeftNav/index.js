@@ -65,6 +65,21 @@ const menuSrc = [
     ]
   },
   {
+    key: '/details',
+    icon: 'profile',
+    title: '详情页',
+    children: [
+      {
+        key: '/details/basics-details',
+        title: '基础详情'
+      },
+      {
+        key: '/details/advanced-details',
+        title: '高级详情'
+      }
+    ]
+  },
+  {
     key: '/order',
     icon: 'shopping',
     title: '订单管理',

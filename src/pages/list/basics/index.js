@@ -12,6 +12,7 @@ import {
 import SearchForm from './components/SearchForm';
 import AddForm from './components/AddForm';
 
+import EditForm from './components/EditForm';
 // 商品状态排版
 const productStateRender = (productState) => {
   switch (productState) {
@@ -169,7 +170,6 @@ class BasicsList extends  Component{
       selectedRowList: [],
 
       // 步骤条
-      current: 0,
       item: {},
       visible: false,
       // xxx
@@ -221,6 +221,8 @@ class BasicsList extends  Component{
 
         <SearchForm></SearchForm>
 
+        <EditForm visible={this.state.visible} item={this.state.item} handleSubmit={this.onSubmit} handleCancel={this.onCancel}></EditForm>
+
         <div style={{marginBottom: 12}}>
           <Button type="primary" icon="plus" >
             新建
@@ -257,6 +259,20 @@ class BasicsList extends  Component{
 
       </div>
     );
+  };
+  // 完成
+  onSubmit = (e) => {
+    console.log('---完成---', e);
+    this.setState({
+      visible: false,
+    });
+  };
+  // 取消
+  onCancel = () => {
+    console.log('基础列表触发');
+    this.setState({
+      visible: false,
+    });
   };
 }
 

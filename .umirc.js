@@ -96,6 +96,40 @@ export default {
             }
           ]
         },
+        { path: '/details/basics-details', component: './details/basics/index/',
+          authority: ['admin', 'user'],
+          breadcrumbArr: [
+            {
+              path: '/',
+              breadcrumbName: '首页',
+            },
+            {
+              path: '',
+              breadcrumbName: '详情页',
+            },
+            {
+              path: '',
+              breadcrumbName: '基础详情',
+            }
+          ]
+        },
+        { path: '/details/advanced-details', component: './details/advanced/index/',
+          authority: ['admin', 'user'],
+          breadcrumbArr: [
+            {
+              path: '/',
+              breadcrumbName: '首页',
+            },
+            {
+              path: '',
+              breadcrumbName: '详情页',
+            },
+            {
+              path: '',
+              breadcrumbName: '高级详情',
+            }
+          ]
+        },
         { path: '/', component: './index/pages/index/',
           authority: ['admin', 'user'],
           breadcrumbArr: [
@@ -137,7 +171,7 @@ export default {
             },
           ]
         },
-        { path: '/test', component: './test/pages/index/',
+        { path: '/test', component: './test2/pages/index/',
           Routes: ['./src/routes/authRoute/index.js'] ,
           authority: ['admin', 'user'],
           breadcrumbArr: [
