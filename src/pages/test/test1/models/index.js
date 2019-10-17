@@ -1,31 +1,30 @@
-// 同步更新 state 的 reducers
-// 处理异步逻辑的 effects （比如网络请求）
-// 订阅数据源的 subscriptions（监听路由，进入页面就如何，可以在这写）
-
 export default {
-  namespace: 'formAdvanced',
+  namespace: 'test1',
   state: {
+    // 初始数据
     data: {
-      name: 'aaa'
+      test: 'a'
     }
   },
+  // 用于订阅数据
   subscriptions: {
     setup({ dispatch, history, query }) {
     },
   },
+  // 用于获取数据
   effects: {
-    *fetch({ payload }, { call, put, select }) {
-      // const { data, headers } = yield call(usersService.fetch, { page }); // 等待网络请求完成
-      // const indexData = yield select((state) => state.index) // 查询state里面的数据
-      yield put({ type: 'formAdvanced/save' }); // 提交到reducers里面的save
-
-    },
+    // select 此方法用于获取当前或其他 model 的 state
+    // call 此方法用于执行一个异步函数，可以理解为等待这个函数执行结束。项目中常用于发送 http 请求，等待服务端响应数据
+    // put 此方法用于触发一个 action，这个 action 既可以是一个 reducer 也可以是一个 effect 。
+    *getUserInfo({payload, callback}, { call, put,select }) {
+      const loginState = yield select((state)=>state.layoutModel );
+      if (callback && typeof callback === 'function') {
+        callback(loginState); // 返回结果
+      }
+      console.log(loginState)
+    }
   },
+  // 用于修改数据
   reducers: {
-    save(state, action) {
-      console.log(action);
-      return { ...state, ...action.payload };
-    },
   },
-
 };

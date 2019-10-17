@@ -1,0 +1,17 @@
+.loginContent {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  margin: -160px 0 0 -160px;
+  width: 320px;
+  height: 340px;
+  padding: 36px;
+  box-shadow: 0 0 100px rgba(0,0,0,.08);
+}
+
+.loginFooter {
+  position: absolute;
+  width: 100%;
+  bottom: 0;
+  background-color: #fff;
+}

@@ -36,8 +36,8 @@ class HeaderUserInfo extends  Component{
       >
         <div className={styles.H_R_L_right}>
           <span className={styles.H_R_L_R_hint}>Hi,</span>
-          <span className={styles.H_R_L_R_userName}>userData.userInfo.name</span>
-          {/*<Avatar src={userData.userInfo.avatar} size={40} icon="user" />*/}
+          <span className={styles.H_R_L_R_userName}>{userData.userInfo.name}</span>
+          <Avatar src={userData.userInfo.avatar} size={40} icon="user" />
         </div>
       </Popover>
     );

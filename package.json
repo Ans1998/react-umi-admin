@@ -10,11 +10,17 @@
   "dependencies": {
     "@lingui/react": "^2.8.3",
     "antd": "^3.19.5",
+    "bizcharts": "^3.5.5",
     "dva": "^2.6.0-beta.6",
+    "js-base64": "^2.5.1",
+    "js-md5": "^0.7.3",
     "moment": "^2.24.0",
+    "qs": "^6.9.0",
+    "rc-tween-one": "^2.6.5",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-transition-group": "^4.3.0"
+    "react-transition-group": "^4.3.0",
+    "umi-request": "^1.2.8"
   },
   "devDependencies": {
     "babel-eslint": "^9.0.0",

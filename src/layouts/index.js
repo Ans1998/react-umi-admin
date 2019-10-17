@@ -1,18 +1,17 @@
-import styles from './index.css'
+// import styles from './index.css'
 import React, {Component} from 'react'
 import withRouter from 'umi/withRouter';
 import { TransitionGroup, CSSTransition } from "react-transition-group";
-
-import {Link} from 'umi';
 
 import HeaderNav from './components/HeaderNav'
 import LeftNav from './components/LeftNav'
 import FooterNav from './components/FooterNav'
 
-import Login from '../pages/login/pages/index'
+import Login from '../pages/login/index/index'
 
 import { connect } from 'dva';
-import { Layout, Breadcrumb, ConfigProvider, Empty } from 'antd';
+
+import { Layout, Breadcrumb, ConfigProvider, Empty, message } from 'antd';
 // import configLocale from 'antd/es/locale/en_US'; // 英文
 import configLocale from 'antd/es/locale/zh_CN'; // 中文
 
@@ -26,19 +25,19 @@ class BasicLayout extends  Component{
       collapsed: false
     };
   }
-  handleClick = (collapsed) => {
-    // console.log(collapsed);
-    this.setState({
-      collapsed: !collapsed,
-    });
-  };
+  // 组件渲染之前
+  componentWillMount() {
+    console.log('layoutModel - componentWillMount', this.props);
+    this.props.getUserInfo()
+  }
   // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
-    if (document.body.clientWidth <= 400) {
-      this.setState({
-        collapsed: true
-      })
-    }
+    // 监听屏幕宽度
+    // if (document.body.clientWidth <= 400) {
+    //   this.setState({
+    //     collapsed: true
+    //   })
+    // }
   }
   // 组件卸载
   componentWillUnmount() {
@@ -57,22 +56,18 @@ class BasicLayout extends  Component{
         // return true
       }
     });
-
+    // 单独页
     if (this.props.location.pathname === '/login') {
       return (<Login></Login>)
     }
     return (
       <ConfigProvider locale={configLocale} renderEmpty={this.publicEmpty}>
-      <Layout
-        style={{
-          minHeight: '100vh'
-        }}
-      >
+      <Layout style={{ minHeight: '100vh' }}>
         {/*左边导航栏*/}
         <LeftNav collapsed={this.state.collapsed} data={this.props}></LeftNav>
         <Layout>
           {/*头部*/}
-          <HeaderNav collapsed={this.state.collapsed} onClickTest={this.handleClick}></HeaderNav>
+          <HeaderNav collapsed={this.state.collapsed} onClickCollapsed={this.handleHeaderNavCollapsedClick}></HeaderNav>
           {/*面包屑*/}
           <Breadcrumb  style={{ margin: '24px 0 0 18px' }}>
             {
@@ -108,6 +103,12 @@ class BasicLayout extends  Component{
       </ConfigProvider>
     );
   }
+  // 头部导航栏缩进
+  handleHeaderNavCollapsedClick = (collapsed) => {
+    this.setState({
+      collapsed: !collapsed,
+    });
+  };
 }
 
 const mapStateToProps = (state, props) => {
@@ -117,6 +118,12 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    getUserInfo: () => {
+      const action = {
+        type: 'layoutModel/getUserInfo'
+      };
+      dispatch(action);
+    }
   }
 };
 

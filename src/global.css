@@ -1,1 +1,21 @@
+/*
+此文件不走 css modules，且会自动被引入，可以在这里写全局样式，以及做样式覆盖
+ */
 
+.publicText {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.publicLogoImg {
+  width: 36px;
+  height: 36px;
+}
+.publicLogoTitle {
+  font-size: 16px;
+  text-transform: uppercase;
+  display: inline-block;
+  font-weight: 700;
+  color: #1890ff;
+}
