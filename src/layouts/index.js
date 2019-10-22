@@ -28,10 +28,11 @@ class BasicLayout extends  Component{
   // 组件渲染之前
   componentWillMount() {
     console.log('layoutModel - componentWillMount', this.props);
-    this.props.getUserInfo()
+    // this.props.getUserInfo()
   }
   // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
+    console.log('layoutModel - componentDidMount', this.props);
     // 监听屏幕宽度
     // if (document.body.clientWidth <= 400) {
     //   this.setState({
@@ -67,7 +68,7 @@ class BasicLayout extends  Component{
         <LeftNav collapsed={this.state.collapsed} data={this.props}></LeftNav>
         <Layout>
           {/*头部*/}
-          <HeaderNav collapsed={this.state.collapsed} onClickCollapsed={this.handleHeaderNavCollapsedClick}></HeaderNav>
+          <HeaderNav layoutProps={this.props} collapsed={this.state.collapsed} onClickCollapsed={this.handleHeaderNavCollapsedClick}></HeaderNav>
           {/*面包屑*/}
           <Breadcrumb  style={{ margin: '24px 0 0 18px' }}>
             {

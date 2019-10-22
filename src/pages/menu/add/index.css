@@ -1,0 +1,9 @@
+.formItemLeft {
+  margin-left: 30px;
+}
+
+.formItemButton {
+  position: fixed;
+  bottom: 6px;
+  right: 25px;
+}

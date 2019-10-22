@@ -1,12 +1,15 @@
 /*
 编译时配置文件
  */
-
+const path = require('path');
 // ref: https://umijs.org/config/
 const routeConfig = require('./../src/routes/config/index');
 export default {
   treeShaking: true,
   history: 'hash',
+  alias: {
+    '@utils': path.resolve(__dirname, '../utils'),
+  },
   plugins: [
     // ref: https://umijs.org/plugin/umi-plugin-react.html
     ['umi-plugin-react', {

@@ -15,11 +15,16 @@ export default {
   // 用于获取数据
   effects: {
     *getUserInfo({ payload } , { call, put }) {
-      console.log('layoutModel-payload');
       const response = yield call(layoutServices.userInfo); // 等待网络请求完成
-      console.log('layoutModel-response', response);
+      console.log(response);
       yield put({ type: 'getUserData', ...response }); // 提交到reducers里面的save
     },
+    *logOutAction({callback}, { call }) {
+      const response = yield call (layoutServices.logOut);
+      if (callback && typeof callback === 'function') {
+        callback(response); // 返回结果
+      }
+    }
   },
   // 用于修改数据
   reducers: {

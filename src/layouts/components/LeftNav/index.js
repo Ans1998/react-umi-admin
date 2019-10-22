@@ -20,6 +20,21 @@ const menuSrc = [
     title: '测试页'
   },
   {
+    key: '/menu',
+    icon: 'user',
+    title: '菜单管理',
+    children: [
+      {
+        key: '/menu/add',
+        title: '添加菜单'
+      },
+      {
+        key: '/menu/list',
+        title: '菜单列表'
+      }
+    ]
+  },
+  {
     key: '/user',
     icon: 'user',
     title: '用户管理',

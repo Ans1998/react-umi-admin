@@ -5,6 +5,40 @@ module.exports = [
     component: './../layouts/',
     Routes: ['./src/routes/token/index.js'],
     routes: [
+      { path: '/menu/add', component: './menu/add/index/',
+        authority: ['admin', 'user'],
+        breadcrumbArr: [
+          {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
+            path: '',
+            breadcrumbName: '菜单管理',
+          },
+          {
+            path: '',
+            breadcrumbName: '添加菜单',
+          }
+        ]
+      },
+      { path: '/menu/list', component: './menu/list/index/',
+        authority: ['admin', 'user'],
+        breadcrumbArr: [
+          {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
+            path: '',
+            breadcrumbName: '菜单管理',
+          },
+          {
+            path: '',
+            breadcrumbName: '菜单列表',
+          }
+        ]
+      },
       { path: '/form/basics-form', component: './form/basics/index/',
         Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],

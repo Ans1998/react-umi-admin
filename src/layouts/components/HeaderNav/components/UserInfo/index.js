@@ -1,8 +1,10 @@
 import React, {Component} from 'react'
 import { connect } from 'dva';
-import { Popover, Avatar } from 'antd';
+import { Popover, Avatar, message } from 'antd';
 import styles from './index.css';
-
+import { sleep } from '@utils/sleep';
+import { Base64 } from 'js-base64';
+import router from 'umi/router';
 class HeaderUserInfo extends  Component{
   // 构造函数
   constructor(props) {
@@ -13,6 +15,7 @@ class HeaderUserInfo extends  Component{
   }
 // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
+    console.log('测试--------------', this.props)
   }
   // 组件卸载
   componentWillUnmount() {
@@ -52,7 +55,8 @@ class HeaderUserInfo extends  Component{
     this.setState({
       userInfoVisible: false
     });
-    console.log('退出登录')
+    message.loading('正在退出登录', 0);
+    this.props.logOutRequest(this.props.headerProps)
   };
 }
 
@@ -63,6 +67,30 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    logOutRequest: (headerProps) => {
+      const action = {
+        type: 'layoutModel/logOutAction',
+        callback: async (res) => {
+          await sleep(1800);
+          console.log(res);
+          console.log(headerProps);
+          if (res.status === 'success') {
+            message.destroy();
+            message.success(res.msg);
+            localStorage.removeItem('token');
+            let url = Base64.encode(headerProps.location.pathname + headerProps.location.search);
+            router.push('/login?ref=' + url);
+          } else {
+            message.destroy();
+            message.warning(res.msg);
+            // localStorage.removeItem('token');
+            // let url = Base64.encode(headerProps.location.pathname + headerProps.location.search);
+            // router.push('/login?ref=' + url);
+          }
+        }
+      };
+      dispatch(action);
+    },
   }
 };
 

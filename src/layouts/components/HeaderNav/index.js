@@ -6,9 +6,7 @@ import { connect } from 'dva';
 import HeaderBadge from './components/Badge/';
 import HeaderLanguage from './components/Language/';
 import HeaderUserInfo from './components/UserInfo/';
-import { sleep } from '../../../../utils/sleep';
-import { Base64 } from 'js-base64';
-import router from 'umi/router';
+
 
 const { Header } = Layout;
 
@@ -24,9 +22,10 @@ class HeaderNav extends  Component{
   }
   // 组件渲染完之后
   componentDidMount() {
+    console.log('headerNav----------', this.props)
   }
   render() {
-    const { collapsed, onClickCollapsed, userData } = this.props;
+    const { collapsed, onClickCollapsed, userData, layoutProps } = this.props;
     return (
       <Header style={{ background: '#fff', height: '75px', padding: 0, boxShadow: '4px 4px 40px 0 rgba(0,0,0,.05)' }}>
         <div className={styles.HeaderContent}>
@@ -40,7 +39,7 @@ class HeaderNav extends  Component{
             <div className={styles.H_R_list}>
               <HeaderBadge></HeaderBadge>
               <HeaderLanguage></HeaderLanguage>
-              <HeaderUserInfo userData={userData}></HeaderUserInfo>
+              <HeaderUserInfo userData={userData} headerProps={layoutProps}></HeaderUserInfo>
             </div>
           </div>
         </div>

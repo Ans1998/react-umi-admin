@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 import router from 'umi/router';
 import styles from './index.css'
 import { connect } from 'dva';
-import { sleep } from '../../../../utils/sleep'
+import { sleep } from '@utils/sleep'
 import { Layout, Row, Col, message } from 'antd';
 
 import FooterNav from './components/FooterNav'
@@ -83,6 +83,7 @@ const mapDispatchToProps = (dispatch, props) => {
         callback: async (res) => {
           console.log('callback', res);// 请求完成后返回的结果
           if (res.status === 'success') {
+            localStorage.setItem('token', res.data.token);
             await sleep(1000);
             message.destroy();
             message.success(res.msg);
