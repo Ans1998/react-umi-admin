@@ -27,12 +27,12 @@ class BasicLayout extends  Component{
   }
   // 组件渲染之前
   componentWillMount() {
-    console.log('layoutModel - componentWillMount', this.props);
+    // console.log('layoutModel - componentWillMount', this.props);
     // this.props.getUserInfo()
   }
   // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
-    console.log('layoutModel - componentDidMount', this.props);
+    // console.log('layoutModel - componentDidMount', this.props);
     // 监听屏幕宽度
     // if (document.body.clientWidth <= 400) {
     //   this.setState({

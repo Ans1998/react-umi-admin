@@ -1,10 +1,10 @@
-import styles from './index.css'
+// import styles from './index.css'
 import React, {Component} from 'react'
 
 import { connect } from 'dva';
-import { Card, Divider, Form, Popconfirm, Table } from 'antd';
-import Main from './components/Main'
-class AdvancedForm extends  Component{
+import { Button, Card, Divider, Popconfirm, Table, Tag } from 'antd';
+import SetAuthModal from './components/SetAuthModal'
+class AuthSet extends  Component{
   // 构造函数
   constructor(props) {
     super(props);
@@ -13,7 +13,10 @@ class AdvancedForm extends  Component{
         {
           key : '0',
           name: 'a',
+          password: '123456',
           describe: 'a',
+          role: '管理员',
+          log: '点击查看',
           updateTime: '2017-10-29'
         }
       ],
@@ -34,21 +37,45 @@ class AdvancedForm extends  Component{
   }
 
   render() {
-    const { getFieldDecorator } = this.props.form;
     const {authList} = this.state;
     const columns = [
       {
-        title: '角色名称',
+        title: '用户名称',
         dataIndex: 'name',
         key: 'name',
       },
       {
-        title: '角色描述',
+        title: '用户密码',
+        dataIndex: 'password',
+        key: 'password',
+      },
+      {
+        title: '用户描述',
         dataIndex: 'describe',
         key: 'describe',
       },
       {
-        title: '最近编辑时间',
+        title: '用户当前角色',
+        dataIndex: 'role',
+        key: 'role',
+        render: (text, record) => (
+          <span onClick={this.showEditProductModal.bind(this, record)}>
+              <a>{text}</a>
+            </span>
+        ),
+      },
+      {
+        title: '用户最近操作日志',
+        dataIndex: 'log',
+        key: 'log',
+        render: (text, record) => (
+          <Tag color='#108ee9'>
+            查看
+          </Tag>
+        ),
+      },
+      {
+        title: '最近登录时间',
         dataIndex: 'updateTime',
         key: 'updateTime',
       },
@@ -57,7 +84,9 @@ class AdvancedForm extends  Component{
         key: 'action',
         render: (text, record) => (
           <span>
-              <a onClick={this.showEditProductModal.bind(this, record)}>配置权限</a>
+              <a onClick={this.showEditProductModal.bind(this, record)}>设置权限</a>
+              <Divider type="vertical" />
+              <a>编辑</a>
               <Divider type="vertical" />
               <Popconfirm title={"确定删除该条数据?"} onConfirm={null}>
                 <a>删除</a>
@@ -68,15 +97,20 @@ class AdvancedForm extends  Component{
     ];
     return (
       <div style={{ background: '#fff'}}>
-        <Card title="权限列表" bordered={false}>
+        <Card title="用户列表" bordered={false}>
+          <div style={{marginBottom: 12}}>
+            <Button type="primary" icon="plus" >
+              新建
+            </Button>
+          </div>
           <Table columns={columns}  dataSource={authList}
                  loading={this.state.tableLoading}
           />
-          <Main
+          <SetAuthModal
             visible={this.state.visible}
             confirmLoading={this.state.confirmLoading}
             handleOk={this.onOk}
-            handleCancel={this.onCancel}></Main>
+            handleCancel={this.onCancel}></SetAuthModal>
         </Card>
       </div>
     );
@@ -87,11 +121,11 @@ class AdvancedForm extends  Component{
       visible: true,
     });
   };
-  onOk = () => {
+  onOk = (values) => {
     this.setState({
-      ModalText: 'The modal will be closed after two seconds',
       confirmLoading: true,
     });
+    console.log('onOk', values);
     setTimeout(() => {
       this.setState({
         visible: false,
@@ -117,4 +151,4 @@ const mapDispatchToProps = (dispatch, props) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'advancedForm' })(AdvancedForm))
+export default connect(mapStateToProps, mapDispatchToProps)(AuthSet)

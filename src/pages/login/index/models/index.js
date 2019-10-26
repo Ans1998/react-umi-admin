@@ -17,16 +17,16 @@ export default {
   },
   effects: {
     *actionLogin({ payload, callback  }, { call, put }) {
-      const response = yield call(loginService.login, payload ); // 等待网络请求完成
+      const response = yield call(loginService.login, payload); // 等待网络请求完成
       // console.log('actionLogin-response', response);
-      if (response) {
+      if (response && response.status === 'success') {
         yield put({ type: 'loginData', ...response }); // 提交到reducers里面的loginData
         if (callback && typeof callback === 'function') {
           callback(response); // 返回结果
         }
       } else {
         message.destroy();
-        message.success('获取数据异常');
+        message.error('获取数据异常');
       }
     }
   },

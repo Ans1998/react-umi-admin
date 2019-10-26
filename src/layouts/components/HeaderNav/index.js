@@ -22,7 +22,7 @@ class HeaderNav extends  Component{
   }
   // 组件渲染完之后
   componentDidMount() {
-    console.log('headerNav----------', this.props)
+    // console.log('headerNav----------', this.props)
   }
   render() {
     const { collapsed, onClickCollapsed, userData, layoutProps } = this.props;

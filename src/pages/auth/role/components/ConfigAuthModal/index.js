@@ -53,31 +53,30 @@ class ConfigAuthModal extends  Component{
   constructor(props) {
     super(props);
     this.state = {
-      expandedKeys: ['0-0-0', '0-0-1'],
-      autoExpandParent: true,
-      checkedKeys: ['0-0-0'],
-      selectedKeys: [],
+      expandedKeys: [], // （受控）展开指定的树节点
+      autoExpandParent: true, // 是否自动展开父节点
+      checkedKeys: ['1', '2'], // 默认选中
     };
   }
   renderTreeNodes = data =>
     data.map(item => {
       if (item.children) {
         return (
-          <TreeNode title={item.title} key={item.key} dataRef={item}>
+          <TreeNode title={item.name} key={item.key} dataRef={item}>
             {this.renderTreeNodes(item.children)}
           </TreeNode>
         );
       }
-      return <TreeNode key={item.key} {...item} />;
+      return <TreeNode title={item.name} key={item.key} dataRef={item} />;
     });
   render() {
-    const {visible, confirmLoading, handleOk, handleCancel} = this.props;
+    const {visible, menuList, confirmLoading, handleCancel} = this.props;
     return (
       <div>
         <Modal
           title="权限配置"
           visible={visible}
-          onOk={handleOk}
+          onOk={this.handleSubmit}
           confirmLoading={confirmLoading}
           onCancel={handleCancel}
         >
@@ -88,10 +87,8 @@ class ConfigAuthModal extends  Component{
             autoExpandParent={this.state.autoExpandParent}
             onCheck={this.onCheck}
             checkedKeys={this.state.checkedKeys}
-            onSelect={this.onSelect}
-            selectedKeys={this.state.selectedKeys}
           >
-            {this.renderTreeNodes(treeData)}
+            {this.renderTreeNodes(menuList)}
           </Tree>
         </Modal>
       </div>
@@ -106,17 +103,14 @@ class ConfigAuthModal extends  Component{
       autoExpandParent: false,
     });
   };
-
   onCheck = checkedKeys => {
     console.log('onCheck', checkedKeys);
     this.setState({ checkedKeys });
   };
-
-  onSelect = (selectedKeys, info) => {
-    console.log('onSelect', info);
-    this.setState({ selectedKeys });
-  };
-
+  handleSubmit = () => {
+    console.log(this.state.checkedKeys)
+    // this.props.handleOk()
+  }
 }
 
 const mapStateToProps = (state, props) => {

@@ -2,7 +2,9 @@ import React, {Component} from 'react'
 
 // import styles from './index.css';
 import { connect } from 'dva';
-import { Button, Form, Input, Select  } from 'antd';
+import { sleep } from '@utils/sleep';
+import { Button, Form, Input, message, Modal, Select } from 'antd';
+import router from 'umi/router';
 const { Option } = Select;
 class MenuChildForm extends  Component{
   // 构造函数
@@ -11,7 +13,15 @@ class MenuChildForm extends  Component{
     this.state = {
     };
   }
+  // 组件渲染之前
+  componentWillMount() {
+  }
+  // 组件已经被渲染到 DOM 中后运行
+  componentDidMount() {
+    // console.log(JSON.parse(arr))
+  }
   render() {
+    const { menuList } = this.props;
     const { getFieldDecorator } = this.props.form;
     return (
       <Form onSubmit={this.handleChildSubmit}>
@@ -20,6 +30,7 @@ class MenuChildForm extends  Component{
             getFieldDecorator('menuRelevanceName', {
               rules: [
                 {
+                  type: 'string',
                   required: true,
                   whitespace: true,
                   message: '请选择关联菜单!'
@@ -30,8 +41,11 @@ class MenuChildForm extends  Component{
                 style={{ width: 200 }}
                 placeholder="请选择关联菜单模块"
               >
-                <Option value="测试管理">测试管理</Option>
-                <Option value="表单管理">表单管理</Option>
+                {
+                  menuList.map((item) => {
+                    return (<Option value={JSON.stringify(item)} key={item.id}>{item.name}</Option>)
+                  })
+                }
               </Select>
             )
           }
@@ -76,9 +90,18 @@ class MenuChildForm extends  Component{
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        console.log('handleChildSubmit', values);
-        const current = this.state.current + 1;
-        this.setState({ current });
+        // console.log('handleChildSubmit', values);
+        let menu = JSON.parse(values.menuRelevanceName);
+        // console.log(menu);
+        let menuChild = JSON.parse(menu.child);
+        menuChild.push({name: values.name, url: values.url});
+        // console.log(menuChild);
+        let form = {
+          id: menu.id,
+          child: JSON.stringify(menuChild),
+        };
+        message.loading('正在操作', 0);
+        this.props.addChildMenuRequest(form)
       }
     });
   }
@@ -86,19 +109,29 @@ class MenuChildForm extends  Component{
 
 const mapStateToProps = (state, props) => {
   return {
-    indexData: state.index
   }
 };
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    onClickSave: (form) => {
+    addChildMenuRequest: (form, that) => {
       const action = {
-        type: 'formAdvanced/save',
+        type: 'menuAddModel/addChildMenuAction',
         payload: form,
+        callback: async (res) => {
+          await sleep(1000);
+          message.destroy();
+          console.log('callback', res);
+          if (res.status === 'success') {
+            message.success(res.msg);
+            that.props.form.resetFields();
+          } else {
+            message.error(res.msg);
+          }
+        }
       };
       dispatch(action);
-    },
+    }
   }
 };
 

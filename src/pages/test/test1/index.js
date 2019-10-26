@@ -11,7 +11,11 @@ class AdvancedForm extends  Component{
     this.state = {
     };
   }
-// 组件已经被渲染到 DOM 中后运行
+  // 组件渲染之前
+  componentWillMount() {
+    // this.props.getUserInfo()
+  }
+  // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
   }
   // 组件卸载

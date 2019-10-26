@@ -15,7 +15,7 @@ class HeaderUserInfo extends  Component{
   }
 // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
-    console.log('测试--------------', this.props)
+    // console.log('测试--------------', this.props)
   }
   // 组件卸载
   componentWillUnmount() {

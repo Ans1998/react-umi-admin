@@ -35,6 +35,21 @@ const menuSrc = [
     ]
   },
   {
+    key: '/auth',
+    icon: 'user',
+    title: '权限管理',
+    children: [
+      {
+        key: '/auth/role/list',
+        title: '角色列表'
+      },
+      {
+        key: '/auth/user/list',
+        title: '用户列表'
+      }
+    ]
+  },
+  {
     key: '/user',
     icon: 'user',
     title: '用户管理',
@@ -133,8 +148,8 @@ class LeftNav extends  Component{
   }
   // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
-    console.log('data', this.props.data);
-    console.log('menuSelectKey', this.state.menuSelectKey);
+    // console.log('data', this.props.data);
+    // console.log('menuSelectKey', this.state.menuSelectKey);
   }
   // 组件卸载
   componentWillUnmount() {
@@ -180,7 +195,7 @@ class LeftNav extends  Component{
   };
   // 手机导航栏
   onCollapseChange = () => {
-    console.log('手机模式')
+    // console.log('手机模式')
   };
   themeChangeRender = () => {
     return (

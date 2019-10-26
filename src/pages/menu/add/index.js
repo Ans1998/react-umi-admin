@@ -4,7 +4,7 @@ import React, {Component} from 'react'
 import { connect } from 'dva';
 import MenuForm from './components/MenuForm';
 import MenuChildForm from './components/MenuChildForm';
-import { Form, Card, } from 'antd';
+import { Form, Card, message } from 'antd';
 
 class MenuAdd extends  Component{
   // 构造函数
@@ -13,25 +13,29 @@ class MenuAdd extends  Component{
     this.state = {
     };
   }
-// 组件已经被渲染到 DOM 中后运行
+  // 组件渲染之前
+  componentWillMount() {
+  }
+  // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
+    this.props.postQueryMenuAction()
   }
   // 组件卸载
   componentWillUnmount() {
   }
   render() {
-
+    const { menuList } = this.props;
     return (
       <div style={{ background: '#fff'}}>
 
         <Card title="添加菜单" bordered={false}>
-          <MenuForm></MenuForm>
+          <MenuForm postQueryMenuAction={this.props.postQueryMenuAction}></MenuForm>
         </Card>
 
         <div style={{height: 24, backgroundColor: '#EEF0F3'}}></div>
 
         <Card title="添加子菜单" bordered={false}>
-          <MenuChildForm></MenuChildForm>
+          <MenuChildForm menuList={menuList}></MenuChildForm>
         </Card>
 
       </div>
@@ -41,11 +45,26 @@ class MenuAdd extends  Component{
 
 const mapStateToProps = (state, props) => {
   return {
+    menuList: state.globalModel.data.menuList
   }
 };
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    postQueryMenuAction: () => {
+      const action = {
+        type: 'globalModel/queryMenuAction',
+        callback: (res) => {
+          console.log('----callback---', res);
+          if (res.status === 'success') {
+          } else {
+            message.destroy();
+            message.success(res.msg)
+          }
+        }
+      };
+      dispatch(action);
+    },
   }
 };
 

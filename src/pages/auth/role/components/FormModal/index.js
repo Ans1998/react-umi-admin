@@ -2,66 +2,60 @@ import React, {Component} from 'react'
 
 // import styles from './index.css';
 import { connect } from 'dva';
-import { Button, Form, Input, Modal } from 'antd';
-
-class EditForm extends  Component{
+import { Modal, Form, Button, Input } from 'antd';
+const { TextArea } = Input;
+class FormModal extends  Component{
   // 构造函数
   constructor(props) {
     super(props);
     this.state = {
     };
   }
-  // 组件卸载
-  componentWillUnmount(){
-  }
   render() {
-    const {visible, loading, handleCancel, menuItem} = this.props;
+    const {title, visible, item, confirmLoading, handleOk, handleCancel} = this.props;
     const { getFieldDecorator } = this.props.form;
-    const formItemPublicLayout = {
-      labelCol: { span: 8 },
-      wrapperCol: { span: 12 },
-    };
     return (
-      <div key={menuItem.key}>
-        <Form {...formItemPublicLayout} onSubmit={this.handleSubmit.bind(this)} style={{margin: '0 auto'}}>
+      <div key={item.key}>
+        <Form onSubmit={this.handleSubmit.bind(this)}>
           <Modal
+            title={title}
             visible={visible}
-            title="修改菜单"
-            onCancel={handleCancel.bind(this)}
+            onOk={handleOk}
+            onCancel={handleCancel}
             footer={[
               <Button key="back" onClick={handleCancel.bind(this)}>取消</Button>,
-              <Button onClick={this.handleSubmit.bind(this)} type="primary" htmlType="submit" loading={loading}>确定</Button>,
+              <Button onClick={this.handleSubmit.bind(this)} type="primary" htmlType="submit" loading={confirmLoading}>确定</Button>,
             ]}
           >
-            <Form.Item label="菜单名称" style={{paddingTop: 24}}>
+            <Form.Item label="角色名称" style={{paddingTop: 24}}>
               {
                 getFieldDecorator('name', {
-                  initialValue: menuItem.name,
+                  initialValue: item.name,
                   rules: [
                     {
                       required: true,
                       whitespace: true,
-                      message: '请输入菜单名称!'
+                      message: '请输入角色名称!'
                     }
                   ],
                 })(
-                  <Input placeholder="请输入菜单名称" />
+                  <Input placeholder="请输入角色名称" />
                 )
               }
             </Form.Item>
-            <Form.Item label="菜单路由">
+            <Form.Item label="角色描述">
               {
-                getFieldDecorator('url', {
-                  initialValue: menuItem.url,
+                getFieldDecorator('describe', {
+                  initialValue: item.describe,
                   rules: [
                     {
                       required: true,
                       whitespace: true,
-                      message: '请输入菜单路由!'
+                      message: '请输入角色描述!'
                     }
                   ],
                 })(
-                  <Input placeholder="请输入菜单路由" />
+                  <TextArea rows={8} placeholder="请输入角色描述" />
                 )
               }
             </Form.Item>
@@ -75,9 +69,13 @@ class EditForm extends  Component{
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        values.id = this.props.menuItem.key;
         // console.log('Received values of form: ', values);
-        this.props.handleSubmit(values);
+        if ('id' in this.props.item) {
+          values.id = this.props.item.id;
+          this.props.handleOk(values);
+        } else {
+          this.props.handleOk(values);
+        }
         this.props.form.resetFields();
       }
     });
@@ -93,5 +91,4 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
   }
 };
-
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'listMenuEditForm' })(EditForm))
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'authRoleFormModal' })(FormModal))
