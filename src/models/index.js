@@ -6,7 +6,7 @@ const filterMenuData = (data) => {
   data.forEach((item, key) => {
     if (item.p_id === 0) {
       item.key = item.id.toString();
-      arr[key] = item;  // 获取父菜单
+      arr.push(item);  // 获取父菜单
       filterMenuTwoData(data, item, key)
     } else {
       for (let i=1; i < data.length; i++) {
@@ -66,6 +66,7 @@ export default {
     //   }
     // },
     *queryMenuAction({payload , callback}, { call, put }) {
+      arr = [];
       let response = yield call(menuAddService.queryMenu);
       // 数据处理(菜单列表)
       if (payload && 'filter' in payload && payload.filter === 'true') {

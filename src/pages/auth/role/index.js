@@ -2,7 +2,7 @@ import styles from './index.css'
 import React, {Component} from 'react'
 
 import { connect } from 'dva';
-import { Card, Divider, Popconfirm, Table, Button, message } from 'antd';
+import { Card, Divider, Popconfirm, Table, Button, message, Tag } from 'antd';
 import ConfigAuthModal from './components/ConfigAuthModal'
 import FormModal from './components/FormModal'
 class AuthList extends  Component{
@@ -14,7 +14,7 @@ class AuthList extends  Component{
       showConfigAuthModal: false,
       showConfigAuthLoading: false,
       formModalTitle: '',
-      formModelItem: {name: '', describe: '', key: '0'},
+      formModelItem: {name: '', describe: '', key: '0', status: 0},
       showFormModal: false,
       showFormModalLoading: false
     };
@@ -44,6 +44,14 @@ class AuthList extends  Component{
         title: '角色描述',
         dataIndex: 'describe',
         key: 'describe',
+      },
+      {
+        title: '角色状态',
+        dataIndex: 'status',
+        key: 'status',
+        render: (text, record) => (
+          text === 1 ? (<Tag color="#87d068">开启</Tag>) : (<Tag color="#f50">关闭</Tag>)
+        ),
       },
       {
         title: '最近编辑时间',

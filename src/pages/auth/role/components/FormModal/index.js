@@ -2,7 +2,7 @@ import React, {Component} from 'react'
 
 // import styles from './index.css';
 import { connect } from 'dva';
-import { Modal, Form, Button, Input } from 'antd';
+import { Modal, Form, Button, Input, Radio } from 'antd';
 const { TextArea } = Input;
 class FormModal extends  Component{
   // 构造函数
@@ -55,7 +55,27 @@ class FormModal extends  Component{
                     }
                   ],
                 })(
-                  <TextArea rows={8} placeholder="请输入角色描述" />
+                  <TextArea rows={4} placeholder="请输入角色描述" />
+                )
+              }
+            </Form.Item>
+            <Form.Item label="角色状态">
+              {
+                getFieldDecorator('status', {
+                  initialValue: item.status,
+                  rules: [
+                    {
+                      type: 'number',
+                      required: true,
+                      whitespace: true,
+                      message: '请选择角色状态!'
+                    }
+                  ],
+                })(
+                  <Radio.Group>
+                    <Radio value={1}>开启</Radio>
+                    <Radio value={0}>关闭</Radio>
+                  </Radio.Group>
                 )
               }
             </Form.Item>
