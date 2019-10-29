@@ -2,30 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a9867fc-85ac-4205-b935-88b47c075602" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/components/HeaderNav/components/UserInfo/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/HeaderNav/components/UserInfo/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/components/HeaderNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/HeaderNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/components/LeftNav/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/components/LeftNav/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/list/basics/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/list/basics/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/login/index/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/login/index/services/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/menu/add/components/MenuChildForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/add/components/MenuChildForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/menu/add/components/MenuForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/add/components/MenuForm/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/menu/add/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/add/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/menu/add/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/add/models/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/menu/add/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/add/services/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/models/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/menu/list/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/list/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/menu/list/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/list/models/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/menu/list/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/menu/list/services/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/test/test1/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test/test1/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/test/test1/services/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test/test1/services/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/test2/pages/index/components/Main/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test2/pages/index/components/Main/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/test2/pages/index/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test2/pages/index/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/config/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/config/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/pages/test/test1/models/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/test/test1/models/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -38,23 +21,35 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/auth/role/index.js">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/pages/menu/list/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="140">
-              <caret line="83" column="20" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="20" />
+            <state relative-caret-position="364">
+              <caret line="157" column="7" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
               <folding>
-                <element signature="e#0#32#0" expanded="true" />
+                <element signature="e#36#74#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/pages/auth/role/components/ConfigAuthModal/index.js">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/models/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="628">
-              <caret line="88" column="48" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+            <state relative-caret-position="1848">
+              <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+              <folding>
+                <element signature="e#0#61#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/menu/list/components/AddForm/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1652">
+              <caret line="60" column="89" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="89" />
               <folding>
                 <element signature="e#77#107#0" expanded="true" />
               </folding>
@@ -63,19 +58,31 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/auth/role/models/index.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="236">
-              <caret line="51" column="25" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="25" />
+            <state relative-caret-position="616">
+              <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+              <folding>
+                <element signature="e#77#107#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/pages/auth/role/services/index.js">
+        <entry file="file://$PROJECT_DIR$/src/pages/menu/list/services/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="448">
-              <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+            <state relative-caret-position="84">
+              <caret line="3" column="9" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="9" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/pages/menu/list/models/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="532">
+              <caret line="19" column="18" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="18" />
             </state>
           </provider>
         </entry>
@@ -115,8 +122,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/layouts/components/FooterNav/models/index.js" />
-        <option value="$PROJECT_DIR$/src/layouts/components/LeftNav/models/index.js" />
         <option value="$PROJECT_DIR$/src/routes/authRoute/index.js" />
         <option value="$PROJECT_DIR$/src/routes/tokenRoute/index.js" />
         <option value="$PROJECT_DIR$/src/routes/auth/index.js" />
@@ -135,18 +140,12 @@
         <option value="$PROJECT_DIR$/src/layouts/components/HeaderNav/index.js" />
         <option value="$PROJECT_DIR$/src/layouts/components/HeaderNav/components/UserInfo/index.js" />
         <option value="$PROJECT_DIR$/src/layouts/components/HeaderNav/components/Badge/index.js" />
-        <option value="$PROJECT_DIR$/src/models/index.js" />
         <option value="$PROJECT_DIR$/src/pages/login/index/services/index.js" />
         <option value="$PROJECT_DIR$/utils/request.js" />
         <option value="$PROJECT_DIR$/src/pages/login/index/models/index.js" />
         <option value="$PROJECT_DIR$/src/pages/menu/add/services/index.js" />
         <option value="$PROJECT_DIR$/src/pages/menu/add/models/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/menu/list/services/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/menu/list/models/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/menu/add/index.js" />
         <option value="$PROJECT_DIR$/src/pages/menu/add/components/MenuForm/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js" />
-        <option value="$PROJECT_DIR$/src/pages/menu/list/index.js" />
         <option value="$PROJECT_DIR$/src/pages/auth/list/components/configAuthModal/index.js" />
         <option value="$PROJECT_DIR$/src/pages/auth/list/components/ConfigAuthModal/index.js" />
         <option value="$PROJECT_DIR$/src/pages/test2/pages/index/index.js" />
@@ -166,6 +165,14 @@
         <option value="$PROJECT_DIR$/src/pages/auth/role/components/FormModal/index.js" />
         <option value="$PROJECT_DIR$/src/pages/auth/role/index.js" />
         <option value="$PROJECT_DIR$/src/pages/auth/role/components/ConfigAuthModal/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/menu/add/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/test/test1/models/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/menu/list/services/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/menu/list/models/index.js" />
+        <option value="$PROJECT_DIR$/src/models/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/menu/list/components/AddForm/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/menu/list/index.js" />
       </list>
     </option>
   </component>
@@ -187,6 +194,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -216,65 +224,6 @@
               <item name="umi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="ConfigAuthModal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="auth" type="462c0819:PsiDirectoryNode" />
-              <item name="role" type="462c0819:PsiDirectoryNode" />
-              <item name="components" type="462c0819:PsiDirectoryNode" />
-              <item name="FormModal" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
-              <item name="form" type="462c0819:PsiDirectoryNode" />
-              <item name="basics" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -284,6 +233,77 @@
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="menu" type="462c0819:PsiDirectoryNode" />
               <item name="list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="AddForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="components" type="462c0819:PsiDirectoryNode" />
+              <item name="EditForm" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="menu" type="462c0819:PsiDirectoryNode" />
+              <item name="list" type="462c0819:PsiDirectoryNode" />
+              <item name="services" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="test1" type="462c0819:PsiDirectoryNode" />
+              <item name="models" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="umi" type="b2602c69:ProjectViewProjectNode" />
@@ -307,7 +327,6 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -400,11 +419,16 @@
       <workItem from="1571886966172" duration="14016000" />
       <workItem from="1571963359529" duration="280000" />
       <workItem from="1571963647642" duration="16174000" />
+      <workItem from="1572057971681" duration="4974000" />
+      <workItem from="1572076092574" duration="4688000" />
+      <workItem from="1572223359206" duration="26000" />
+      <workItem from="1572225265828" duration="17782000" />
+      <workItem from="1572309422038" duration="599000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="397002000" />
+    <option name="totallyTimeSpent" value="425071000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -465,8 +489,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/layouts/components/HeaderNav/models/index.js" />
-    <entry file="file://$PROJECT_DIR$/src/layouts/components/HeaderNav/services/index.js" />
     <entry file="file://$PROJECT_DIR$/src/layouts/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="336">
@@ -638,13 +660,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/services/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="252">
-          <caret line="9" column="12" selection-start-line="9" selection-start-column="2" selection-end-line="9" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/login/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="364">
@@ -738,35 +753,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/layouts/components/LeftNav/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="371">
-          <caret line="47" column="20" selection-start-line="47" selection-start-column="16" selection-end-line="47" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#33#0" expanded="true" />
-            <element signature="e#273#332#0" />
-            <element signature="e#336#394#0" />
-            <element signature="e#398#610#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/auth/user/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1064">
           <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="38" selection-end-column="12" />
           <folding>
             <element signature="e#36#74#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/add/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="572">
-          <caret line="62" column="11" lean-forward="true" selection-start-line="58" selection-start-column="10" selection-end-line="62" selection-end-column="11" />
-          <folding>
-            <element signature="e#111#141#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -778,62 +770,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="644">
-          <caret line="35" column="25" selection-start-line="35" selection-start-column="17" selection-end-line="35" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="376">
-          <caret line="57" column="53" lean-forward="true" selection-start-line="57" selection-start-column="5" selection-end-line="57" selection-end-column="53" />
-          <folding>
-            <element signature="e#0#61#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/auth/role/services/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="448">
-          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/menu/add/components/MenuForm/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="87" column="45" lean-forward="true" selection-start-line="86" selection-start-column="12" selection-end-line="87" selection-end-column="45" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/add/components/MenuChildForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="348">
-          <caret line="125" column="35" selection-start-line="125" selection-start-column="32" selection-end-line="125" selection-end-column="35" />
-          <folding>
-            <element signature="e#77#107#0" expanded="true" />
-            <element signature="n#!!block;n#render#0;n#MenuChildForm#0" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="460">
-          <caret line="66" column="24" lean-forward="true" selection-start-line="35" selection-start-column="12" selection-end-line="66" selection-end-column="24" />
-          <folding>
-            <element signature="e#77#107#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/auth/role/models/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="236">
-          <caret line="51" column="25" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="25" />
         </state>
       </provider>
     </entry>
@@ -857,33 +797,131 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/index.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/auth/role/models/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="142" column="45" lean-forward="true" selection-start-line="142" selection-start-column="4" selection-end-line="142" selection-end-column="45" />
+        <state relative-caret-position="1428">
+          <caret line="51" column="25" selection-start-line="51" selection-start-column="5" selection-end-line="51" selection-end-column="25" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/auth/role/components/ConfigAuthModal/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="88" column="48" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
           <folding>
-            <element signature="e#36#74#0" expanded="true" />
+            <element signature="e#77#107#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/auth/role/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="140">
-          <caret line="83" column="20" selection-start-line="83" selection-start-column="12" selection-end-line="83" selection-end-column="20" />
+        <state relative-caret-position="280">
+          <caret line="76" column="16" lean-forward="true" selection-start-line="72" selection-start-column="9" selection-end-line="76" selection-end-column="16" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/pages/auth/role/components/ConfigAuthModal/index.js">
+    <entry file="file://$PROJECT_DIR$/src/pages/auth/role/services/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="628">
-          <caret line="88" column="48" selection-start-line="88" selection-start-column="48" selection-end-line="88" selection-end-column="48" />
+        <state relative-caret-position="448">
+          <caret line="16" column="53" selection-start-line="16" selection-start-column="53" selection-end-line="16" selection-end-column="53" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/add/components/MenuChildForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-562">
+          <caret line="6" selection-start-line="6" selection-end-line="6" selection-end-column="32" />
+          <folding>
+            <element signature="n#!!block;n#render#0;n#MenuChildForm#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/add/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="7" selection-start-line="7" selection-end-line="7" />
+          <folding>
+            <element signature="e#111#141#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/test/test1/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="23" column="7" lean-forward="true" selection-start-line="23" selection-start-column="7" selection-end-line="23" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/layouts/components/LeftNav/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4424">
+          <caret line="180" column="14" selection-start-line="180" selection-start-column="14" selection-end-line="180" selection-end-column="14" />
+          <folding>
+            <element signature="e#0#33#0" expanded="true" />
+            <element signature="e#273#332#0" />
+            <element signature="e#336#394#0" />
+            <element signature="e#398#610#0" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="364">
+          <caret line="157" column="7" selection-start-line="157" selection-start-column="7" selection-end-line="157" selection-end-column="7" />
+          <folding>
+            <element signature="e#36#74#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1848">
+          <caret line="67" column="59" selection-start-line="67" selection-start-column="59" selection-end-line="67" selection-end-column="59" />
+          <folding>
+            <element signature="e#0#61#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/components/AddForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1652">
+          <caret line="60" column="89" selection-start-line="60" selection-start-column="89" selection-end-line="60" selection-end-column="89" />
           <folding>
             <element signature="e#77#107#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="616">
+          <caret line="23" column="12" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
+          <folding>
+            <element signature="e#77#107#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/services/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="84">
+          <caret line="3" column="9" selection-start-line="3" selection-start-column="2" selection-end-line="3" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/pages/menu/list/models/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="532">
+          <caret line="19" column="18" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="18" />
         </state>
       </provider>
     </entry>

@@ -1,6 +1,45 @@
 import menuAddService from '@/pages/menu/add/services/index';
 import loginService from '@/pages/login/index/services';
 
+let arr = [];
+const filterMenuData = (data) => {
+  data.forEach((item, key) => {
+    if (item.p_id === 0) {
+      item.key = item.id.toString();
+      arr[key] = item;  // 获取父菜单
+      filterMenuTwoData(data, item, key)
+    } else {
+      for (let i=1; i < data.length; i++) {
+        // 获取三级以上菜单
+        if (item.id === data[i].p_id) {
+          data[i].key = data[i].id.toString();
+          if ('children' in item) {
+            item.children.push(data[i])
+          } else {
+            item.children = [];
+            item.children.push(data[i])
+          }
+        }
+      }
+    }
+  });
+  return arr;
+};
+const filterMenuTwoData = (data, item, key) => {
+  data.forEach((test2Item) => {
+    if (test2Item.p_id === item.id) {
+      test2Item.key = test2Item.id.toString();
+      // 获取二级菜单
+      if ('children' in arr[key]) {
+        arr[key].children.push(test2Item)
+      } else {
+        arr[key].children = [];
+        arr[key].children.push(test2Item)
+      }
+    }
+  })
+};
+
 export default {
   namespace: 'globalModel',
   state: {
@@ -27,21 +66,13 @@ export default {
     //   }
     // },
     *queryMenuAction({payload , callback}, { call, put }) {
-      const response = yield call(menuAddService.queryMenu);
+      let response = yield call(menuAddService.queryMenu);
       // 数据处理(菜单列表)
       if (payload && 'filter' in payload && payload.filter === 'true') {
-        response.data.forEach((item) => {
-          item.key = item.id.toString();
-          let child = JSON.parse(item.child);
-          if (child.length > 0) {
-            item.children = child;
-            item.children.forEach((childItem, key) => {
-              childItem.key = item.key + '-' + key
-            })
-          }
-        });
+        response.data = filterMenuData(response.data);
       }
-      yield put({ type: 'queryMenuReducer', ...response }); // 提交到reducers里面的loginData
+      yield put({ type: 'queryMenuReducer', ...response
+      }); // 提交到reducers里面的loginData
       if (callback && typeof callback === 'function') {
         callback(response); // 返回结果
       }

@@ -2,41 +2,70 @@ import React, {Component} from 'react'
 
 // import styles from './index.css';
 import { connect } from 'dva';
-import { Button, Form, Input, Modal, Radio  } from 'antd';
+import { Button, Form, Input, Modal, Radio, Cascader  } from 'antd';
 
-class EditForm extends  Component{
+class AddForm extends  Component{
   // 构造函数
   constructor(props) {
     super(props);
     this.state = {
     };
   }
+  // filterMenu(data) {
+  //   data.map((item) => {
+  //     item.label = item.name;
+  //     item.value = item.id;
+  //     if ('children' in item) {
+  //       this.filterMenu(item.children)
+  //     }
+  //   })
+  // };
+  // 组件已经被渲染到 DOM 中后运行
+  componentDidMount() {
+  }
   // 组件卸载
   componentWillUnmount(){
   }
   render() {
-    const {visible, loading, handleCancel, menuItem} = this.props;
+    const {visible, loading, handleCancel, menuList} = this.props;
+    // menuList.map((item) => {
+    //   console.log(item);
+    //   item.label = item.name;
+    //   item.value = item.id;
+    //   if ('children' in item) {
+    //     this.filterMenu(item.children)
+    //   }
+    // });
     const { getFieldDecorator } = this.props.form;
     const formItemPublicLayout = {
       labelCol: { span: 8 },
       wrapperCol: { span: 12 },
     };
     return (
-      <div key={menuItem.id}>
+      <div>
         <Form {...formItemPublicLayout} onSubmit={this.handleSubmit.bind(this)} style={{margin: '0 auto'}}>
           <Modal
             visible={visible}
-            title="修改菜单"
+            title="添加菜单"
             onCancel={handleCancel.bind(this)}
             footer={[
               <Button key="back" onClick={handleCancel.bind(this)}>取消</Button>,
               <Button onClick={this.handleSubmit.bind(this)} type="primary" htmlType="submit" loading={loading}>确定</Button>,
             ]}
           >
-            <Form.Item label="菜单名称" style={{paddingTop: 24}}>
+            <Form.Item label="关联菜单" style={{paddingTop: 24}}>
+              {
+                getFieldDecorator('p_id', {
+                })(
+                  <Cascader placeholder="请选择关联菜单"
+                            fieldNames={{ label: 'name', value: 'id', children: 'children' }}
+                            options={menuList} changeOnSelect />
+                )
+              }
+            </Form.Item>
+            <Form.Item label="菜单名称">
               {
                 getFieldDecorator('name', {
-                  initialValue: menuItem.name,
                   rules: [
                     {
                       required: true,
@@ -52,7 +81,6 @@ class EditForm extends  Component{
             <Form.Item label="菜单路由">
               {
                 getFieldDecorator('url', {
-                  initialValue: menuItem.url,
                   rules: [
                     {
                       required: true,
@@ -68,7 +96,6 @@ class EditForm extends  Component{
             <Form.Item label="菜单状态">
               {
                 getFieldDecorator('status', {
-                  initialValue: menuItem.status,
                   rules: [
                     {
                       type: 'number',
@@ -95,8 +122,11 @@ class EditForm extends  Component{
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        values.id = this.props.menuItem.key;
-        // console.log('Received values of form: ', values);
+        if (!values.p_id) {
+          values.p_id = 0
+        } else {
+          values.p_id = values.p_id[values.p_id.length-1]
+        }
         this.props.handleSubmit(values, this.props.form);
       }
     });
@@ -113,4 +143,4 @@ const mapDispatchToProps = (dispatch, props) => {
   }
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'listMenuEditForm' })(EditForm))
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'listMenuAddForm' })(AddForm))

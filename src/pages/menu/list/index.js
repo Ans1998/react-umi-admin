@@ -2,19 +2,24 @@
 import React, {Component} from 'react'
 import { connect } from 'dva';
 import EditForm from './components/EditForm';
-import { Card, Divider, Popconfirm, Table, message } from 'antd';
+import AddForm from './components/AddForm'
+import { Card, Divider, Popconfirm, Table, message, Button, Tag } from 'antd';
 import { sleep } from '@utils/sleep'
 // import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
-
+import router from 'umi/router';
 class MenuList extends  Component{
   // 构造函数
   constructor(props) {
     super(props);
     this.state = {
-      loading: false,
-      visible: false,
-      tableLoading: true,
-      menuItem: {}
+      tableLoading: false,
+
+      editFormLoading: false,
+      editFormVisible: false,
+      menuItem: {},
+
+      addFormVisible: false,
+      addFormLoading: false
     };
   }
 // 组件已经被渲染到 DOM 中后运行
@@ -35,11 +40,24 @@ class MenuList extends  Component{
         title: '菜单路由',
         dataIndex: 'url',
         key: 'url',
+        render: (text, record) => (
+          <a onClick={() => {
+            router.push(text)
+          }}>{text}</a>
+        )
+      },
+      {
+        title: '菜单状态',
+        dataIndex: 'status',
+        key: 'status',
+        render: (text, record) => (
+          text === 1 ? (<Tag color="#87d068">开启</Tag>) : (<Tag color="#f50">关闭</Tag>)
+        ),
       },
       {
         title: '最近编辑时间',
-        dataIndex: 'updateTime',
-        key: 'updateTime',
+        dataIndex: 'update_time',
+        key: 'update_time',
       },
       {
         title: '操作',
@@ -59,84 +77,91 @@ class MenuList extends  Component{
     return (
       <div style={{ background: '#fff'}}>
         <Card title="菜单列表" bordered={false}>
+          <div style={{marginBottom: 12}}>
+            <Button type="primary" icon="plus" onClick={this.handleTableAdd}>
+              新建
+            </Button>
+          </div>
           <Table columns={columns}  dataSource={menuList}
                  loading={this.state.tableLoading}
           />
         </Card>
-        <EditForm handleSubmit={this.onSubmit} handleCancel={this.onCancel} visible={this.state.visible} loading={this.state.loading} menuItem={this.state.menuItem}></EditForm>
+        <AddForm
+          menuList={menuList}
+          handleSubmit={this.onAddFormSubmit}
+          handleCancel={this.onCancel}
+          visible={this.state.addFormVisible}
+          loading={this.state.addFormLoading}
+          ></AddForm>
+        <EditForm
+          handleSubmit={this.onEditFormSubmit}
+          handleCancel={this.onCancel}
+          visible={this.state.editFormVisible}
+          loading={this.state.editFormLoading}
+          menuItem={this.state.menuItem}
+        ></EditForm>
       </div>
     );
+  };
+  // filterMenu(data) {
+  //   data.map((item) => {
+  //     item.label = item.name;
+  //     item.value = item.id;
+  //     if ('children' in item) {
+  //       this.filterMenu(item.children)
+  //     }
+  //   })
+  // };
+  handleTableAdd = () => {
+    console.log('handleTableAdd');
+    this.setState({
+      addFormVisible: true
+    });
   };
   // 编辑按钮
   showEditProductModal = (record) => {
     console.log('showEditProductModal', record);
     this.setState({
-      visible: true,
+      editFormVisible: true,
       menuItem: record
     });
   };
   // 删除按钮
   handleTableDelete = (record) => {
     console.log('showDeleteProductModal', record);
-    if (record.key.indexOf('-') === -1) {
-      console.log('删菜单');
-      let form = {
-        id: record.key
-      };
-      message.loading('正在加载', 0);
-      this.props.deleteMenuAction(form, this)
-    } else {
-      console.log('删子菜单');
-      let id = record.key.split('-');
-      console.log(id);
-      let src = this.props.menuList.filter((item) => {
-        return item.key === id['0'];
-      });
-      src[0].children.splice(id['1'], 1);
-      let form = {
-        id: src[0].id,
-        child: JSON.stringify(src[0].children)
-      };
-      // console.log('子菜单---', form);
-      message.loading('正在加载', 0);
-      this.props.editorChildMenuAction(form, this)
-    }
+    let form = {
+      id: record.id
+    };
+    // console.log('子菜单---', form);
+    message.loading('正在加载', 0);
+    this.props.deleteMenuAction(form, this)
 
   };
   // 模态框取消
   onCancel = () => {
     this.setState({
-      visible: false
+      editFormVisible: false,
+      addFormVisible: false
     })
   };
-  onSubmit = (values) => {
+  onEditFormSubmit = (values, propsForm) => {
     this.setState({
-      loading: true
+      editFormLoading: true
     });
-    if (values.id.indexOf('-') === -1) {
-      // console.log('菜单---', values);
-      message.loading('正在加载', 0);
-      this.props.editorMenuAction(values, this)
-    } else {
-      let id = values.id.split('-');
-      let src = this.props.menuList.filter((item) => {
-        return item.key === id['0'];
-      });
-      // Object.assign()
-      src[0].children[id['1']].name =  values.name;
-      src[0].children[id['1']].url =  values.url;
-      // console.log(src);
-      let form = {
-        id: src[0].id,
-        child: JSON.stringify(src[0].children)
-      };
-      // console.log('子菜单---', form);
-      message.loading('正在加载', 0);
-      this.props.editorChildMenuAction(form, this)
-    }
-
+    // console.log('子菜单---', values);
+    message.loading('正在加载', 0);
+    this.props.editorMenuAction(values, propsForm, this)
+  };
+  onAddFormSubmit = (values, propsForm) => {
+    this.setState({
+      addFormLoading: true
+    });
+    console.log('onAddFormSubmit', values);
+    message.loading('正在加载', 0);
+    this.props.addMenuAction(values, propsForm, this)
   }
 }
+
 
 const mapStateToProps = (state, props) => {
   return {
@@ -159,17 +184,18 @@ const mapDispatchToProps = (dispatch, props) => {
       };
       dispatch(action);
     },
-    editorMenuAction: (form, that) => {
+    addMenuAction: (form, propsForm, that) => {
       const action = {
-        type: 'menuListModel/editorMenuAction',
+        type: 'menuListModel/addMenuAction',
         payload: form,
         callback: async (res) => {
           await sleep(1800);
           console.log('editorMenuAction----callback---', res);
           that.setState({
-            visible: false,
-            loading: false
+            addFormVisible: false,
+            addFormLoading: false
           });
+          propsForm.resetFields();
           if (res.status === 'success') {
             message.destroy();
             message.success(res.msg);
@@ -182,17 +208,18 @@ const mapDispatchToProps = (dispatch, props) => {
       };
       dispatch(action);
     },
-    editorChildMenuAction: (form, that) => {
+    editorMenuAction: (form, propsForm, that) => {
       const action = {
-        type: 'menuListModel/editorChildMenuAction',
+        type: 'menuListModel/editorMenuAction',
         payload: form,
         callback: async (res) => {
           await sleep(1800);
+          console.log('editorMenuAction----callback---', res);
           that.setState({
-            visible: false,
-            loading: false
+            editFormVisible: false,
+            editFormLoading: false
           });
-          console.log('editorChildMenuAction----callback---', res);
+          propsForm.resetFields();
           if (res.status === 'success') {
             message.destroy();
             message.success(res.msg);
