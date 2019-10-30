@@ -1,8 +1,22 @@
 import request from '@utils/request'
-import qs from 'qs'
 
 export default {
-  addMenu: (data) => {
-    return request.post('/api/menu/add',{ data: qs.stringify(data) })
-  }
+  queryUser: () => {
+    return request.post('/api/user/query')
+  },
+  addUser: (data) => {
+    return request.post('/api/user/add', data)
+  },
+  deleteUser: (data) => {
+    return request.post('/api/user/delete', data)
+  },
+  editorUser: (data) => {
+    return request.post('/api/user/editor', data)
+  },
+  addSetAuthUser: (data) => {
+    return request.post('/api/user/set/auth/add', data)
+  },
+  editorSetAuthUser: (data) => {
+    return request.post('/api/user/set/auth/editor', data)
+  },
 }

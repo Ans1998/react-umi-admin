@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 // import styles from './index.css';
 import { connect } from 'dva';
 import { Modal, Form, Button, Input, Radio } from 'antd';
-const { TextArea } = Input;
+
 class FormModal extends  Component{
   // 构造函数
   constructor(props) {
@@ -12,13 +12,13 @@ class FormModal extends  Component{
     };
   }
   render() {
-    const {title, visible, item, confirmLoading, handleOk, handleCancel} = this.props;
+    const {visible, item, confirmLoading, handleOk, handleCancel} = this.props;
     const { getFieldDecorator } = this.props.form;
     return (
       <div key={item.key}>
         <Form onSubmit={this.handleSubmit.bind(this)}>
           <Modal
-            title={title}
+            title={'添加用户'}
             visible={visible}
             onOk={handleOk}
             onCancel={handleCancel}
@@ -27,48 +27,49 @@ class FormModal extends  Component{
               <Button onClick={this.handleSubmit.bind(this)} type="primary" htmlType="submit" loading={confirmLoading}>确定</Button>,
             ]}
           >
-            <Form.Item label="角色名称" >
+            <Form.Item label="用户名称">
               {
                 getFieldDecorator('name', {
-                  initialValue: item.name,
+                  initialValue: item.u_name,
                   rules: [
                     {
                       required: true,
                       whitespace: true,
-                      message: '请输入角色名称!'
+                      message: '请输入用户名称!'
                     }
                   ],
                 })(
-                  <Input placeholder="请输入角色名称" />
+                  <Input placeholder="请输入用户名称" />
                 )
               }
             </Form.Item>
-            <Form.Item label="角色描述">
+            <Form.Item label="用户密码">
               {
-                getFieldDecorator('describe', {
-                  initialValue: item.describe,
+                getFieldDecorator('password', {
+                  initialValue: item.u_password,
                   rules: [
                     {
                       required: true,
-                      whitespace: true,
-                      message: '请输入角色描述!'
+                      message: '请输入6位数密码!',
+                      min: 6,
                     }
                   ],
                 })(
-                  <TextArea rows={4} placeholder="请输入角色描述" />
+                  <Input placeholder="请输入用户密码" />
                 )
               }
             </Form.Item>
-            <Form.Item label="角色状态">
+
+            <Form.Item label="用户状态">
               {
                 getFieldDecorator('status', {
-                  initialValue: item.status,
+                  initialValue: item.u_status,
                   rules: [
                     {
                       type: 'number',
                       required: true,
                       whitespace: true,
-                      message: '请选择角色状态!'
+                      message: '请选择用户状态!'
                     }
                   ],
                 })(
@@ -79,6 +80,7 @@ class FormModal extends  Component{
                 )
               }
             </Form.Item>
+
           </Modal>
         </Form>
       </div>
@@ -89,13 +91,11 @@ class FormModal extends  Component{
     e.preventDefault();
     this.props.form.validateFieldsAndScroll((err, values) => {
       if (!err) {
-        // console.log('Received values of form: ', values);
-        if ('id' in this.props.item) {
-          values.id = this.props.item.id;
-          this.props.handleOk(values, this.props.form);
-        } else {
-          this.props.handleOk(values, this.props.form);
+        console.log('Received values of form: ', values,);
+        if ('u_id' in this.props.item) {
+          values.id = this.props.item.u_id
         }
+        this.props.handleOk(values, this.props.form);
       }
     });
   }
@@ -110,4 +110,4 @@ const mapDispatchToProps = (dispatch, props) => {
   return {
   }
 };
-export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'authRoleFormModal' })(FormModal))
+export default connect(mapStateToProps, mapDispatchToProps)(Form.create({ name: 'authUserFormModal' })(FormModal))

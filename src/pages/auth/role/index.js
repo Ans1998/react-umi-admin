@@ -1,16 +1,19 @@
-import styles from './index.css'
+// import styles from './index.css'
 import React, {Component} from 'react'
 
 import { connect } from 'dva';
 import { Card, Divider, Popconfirm, Table, Button, message, Tag } from 'antd';
 import ConfigAuthModal from './components/ConfigAuthModal'
 import FormModal from './components/FormModal'
+import { sleep } from '@utils/sleep'
 class AuthList extends  Component{
   // 构造函数
   constructor(props) {
     super(props);
     this.state = {
       tableLoading: true,
+      roleItem: [],
+      roleItemMenuId: [],
       showConfigAuthModal: false,
       showConfigAuthLoading: false,
       formModalTitle: '',
@@ -26,14 +29,13 @@ class AuthList extends  Component{
   // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
     this.props.queryRole(this);
-    this.props.queryMenuAction();
   }
   // 组件卸载
   componentWillUnmount() {
   }
 
   render() {
-    const { roleList, menuList } = this.props;
+    const { roleList, menuList, roleItem } = this.props;
     const columns = [
       {
         title: '角色名称',
@@ -90,9 +92,11 @@ class AuthList extends  Component{
           <ConfigAuthModal
             visible={this.state.showConfigAuthModal}
             menuList={menuList}
+            roleItem={this.state.roleItemMenuId}
             confirmLoading={this.state.showConfigAuthLoading}
             handleOk={this.onConfigAuthOk}
             handleCancel={this.onCancel}
+            handleCheck={this.onCheck}
           ></ConfigAuthModal>
           <FormModal
             title={this.state.formModalTitle}
@@ -108,9 +112,14 @@ class AuthList extends  Component{
   };
   showConfigAuthModal = (record) => {
     console.log(record);
+    let form = {
+      role_id: record.id
+    };
     this.setState({
-      showConfigAuthModal: true,
+      roleItem: record
     });
+    message.loading('正在加载', 0);
+    this.props.queryAuthRole(form, this);
   };
   showEditorModal = (record) => {
     console.log(record);
@@ -129,6 +138,7 @@ class AuthList extends  Component{
     });
   };
   handleTableDelete = (record) => {
+    message.loading('正在加载', 0);
     console.log(record);
     let form = {
       id: record.id
@@ -136,27 +146,35 @@ class AuthList extends  Component{
     console.log(form);
     this.props.deleteRole(form, this)
   };
-  onConfigAuthOk = (values) => {
-    console.log(values);
+  onCheck = (values) => {
+    this.setState({
+      roleItemMenuId: values
+    });
+  };
+  onConfigAuthOk = () => {
+    message.loading('正在加载', 0);
+    let {roleItem, roleItemMenuId} = this.state;
+    console.log(roleItem, roleItemMenuId);
+    let form = {
+      role_id: roleItem.id,
+      menu_arr: JSON.stringify(roleItemMenuId)
+    };
+    console.log(form);
     this.setState({
       showConfigAuthLoading: true,
     });
-    setTimeout(() => {
-      this.setState({
-        showConfigAuthModal: false,
-        showConfigAuthLoading: false,
-      });
-    }, 2000);
+    this.props.configAuthRole(form, this)
   };
-  onFormModalOk = (values) => {
+  onFormModalOk = (values, propsForm) => {
+    message.loading('正在加载', 0);
     console.log(values);
     this.setState({
       showFormModalLoading: true,
     });
     if ('id' in values) {
-      this.props.editorRole(values, this)
+      this.props.editorRole(values, this, propsForm)
     } else {
-      this.props.addRole(values, this)
+      this.props.addRole(values, this, propsForm)
     }
   };
   onCancel = () => {
@@ -170,7 +188,8 @@ class AuthList extends  Component{
 
 const mapStateToProps = (state, props) => {
   return {
-    roleList: state.authRoleModel.data.roleList,
+    // roleItem: state.authRoleModel.data.roleItem,
+    roleList: state.globalModel.data.roleList,
     menuList: state.globalModel.data.menuList
   }
 };
@@ -180,7 +199,7 @@ const mapDispatchToProps = (dispatch, props) => {
     queryMenuAction: () => {
       const action = {
         type: 'globalModel/queryMenuAction',
-        payload: { filter: 'true' },
+        payload: { filter: 'true', isAuth: 'true' },
         callback: (res) => {
           console.log('----callback---', res);
         }
@@ -189,13 +208,14 @@ const mapDispatchToProps = (dispatch, props) => {
     },
     queryRole: (that) => {
       const action = {
-        type: 'authRoleModel/queryRoleAction',
+        type: 'globalModel/queryRoleAction',
         callback: (res) => {
           console.log(res);
           if (res.status === 'success') {
             that.setState({
               tableLoading: false
-            })
+            });
+            that.props.queryMenuAction();
           } else {
             message.destroy();
             message.error(res.msg)
@@ -204,12 +224,13 @@ const mapDispatchToProps = (dispatch, props) => {
       };
       dispatch(action)
     },
-    addRole: (form, that) => {
+    addRole: (form, that, propsForm) => {
       const action = {
         type: 'authRoleModel/addRoleAction',
         payload: form,
-        callback: (res) => {
+        callback: async(res) => {
           console.log(res);
+          await sleep(1800);
           message.destroy();
           if (res.status === 'success') {
             that.setState({
@@ -217,7 +238,8 @@ const mapDispatchToProps = (dispatch, props) => {
               showFormModalLoading: false,
             });
             message.success(res.msg);
-            that.props.queryRole(that)
+            that.props.queryRole(that);
+            propsForm.resetFields();
           } else {
             message.error(res.msg)
           }
@@ -229,8 +251,9 @@ const mapDispatchToProps = (dispatch, props) => {
       const action = {
         type: 'authRoleModel/deleteRoleAction',
         payload: form,
-        callback: (res) => {
+        callback: async (res) => {
           console.log(res);
+          await sleep(1800);
           message.destroy();
           if (res.status === 'success') {
             message.success(res.msg);
@@ -242,12 +265,13 @@ const mapDispatchToProps = (dispatch, props) => {
       };
       dispatch(action)
     },
-    editorRole: (form, that) => {
+    editorRole: (form, that, propsForm) => {
       const action = {
         type: 'authRoleModel/editorRoleAction',
         payload: form,
-        callback: (res) => {
+        callback: async (res) => {
           console.log(res);
+          await sleep(1800);
           message.destroy();
           if (res.status === 'success') {
             that.setState({
@@ -256,6 +280,7 @@ const mapDispatchToProps = (dispatch, props) => {
             });
             message.success(res.msg);
             that.props.queryRole(that);
+            propsForm.resetFields();
           } else {
             message.error(res.msg)
           }
@@ -263,17 +288,47 @@ const mapDispatchToProps = (dispatch, props) => {
       };
       dispatch(action)
     },
-    configAuthRole: (form) => {
+    queryAuthRole: (form, that) => {
       const action = {
-        type: 'authRoleModel/configAuthRoleAction',
+        type: 'authRoleModel/queryAuthRoleAction',
         payload: form,
         callback: (res) => {
           console.log(res);
-          // if (res.status === 'success') {
-          // } else {
-          //   message.destroy();
-          //   message.success(res.msg)
-          // }
+          message.destroy();
+          if (res.status === 'success') {
+            let arr = [];
+            res.data.forEach((item) => {
+              arr.push(item.menu_id.toString())
+            });
+            that.setState({
+              // roleItem: res.data,
+              roleItemMenuId: arr,
+              showConfigAuthModal: true,
+            });
+          } else {
+            message.error(res.msg)
+          }
+        }
+      };
+      dispatch(action)
+    },
+    configAuthRole: (form, that) => {
+      const action = {
+        type: 'authRoleModel/configAuthRoleAction',
+        payload: form,
+        callback: async(res) => {
+          console.log(res);
+          await sleep(1800);
+          message.destroy();
+          if (res.status === 'success') {
+              that.setState({
+                showConfigAuthModal: false,
+                showConfigAuthLoading: false,
+              });
+            message.success(res.msg)
+          } else {
+            message.error(res.msg)
+          }
         }
       };
       dispatch(action)

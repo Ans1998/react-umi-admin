@@ -174,7 +174,7 @@ const mapDispatchToProps = (dispatch, props) => {
     queryMenuAction: (that) => {
       const action = {
         type: 'globalModel/queryMenuAction',
-        payload: { filter: 'true' },
+        payload: { filter: 'true', isAuth: 'false' },
         callback: (res) => {
           that.setState({
             tableLoading: false

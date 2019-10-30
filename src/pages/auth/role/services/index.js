@@ -4,6 +4,9 @@ export default {
   queryRole: () => {
     return request.post('/api/role/query')
   },
+  queryAuthRole: (data) => {
+    return request.post('/api/role/config/auth/query', data)
+  },
   addRole: (data) => {
     return request.post('/api/role/add', data)
   },

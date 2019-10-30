@@ -4,7 +4,8 @@ export default {
   state: {
     // 初始数据
     data: {
-      roleList: []
+      roleList: [],
+      roleItem: {}
     }
   },
   // 用于订阅数据
@@ -17,12 +18,9 @@ export default {
     // select 此方法用于获取当前或其他 model 的 state
     // call 此方法用于执行一个异步函数，可以理解为等待这个函数执行结束。项目中常用于发送 http 请求，等待服务端响应数据
     // put 此方法用于触发一个 action，这个 action 既可以是一个 reducer 也可以是一个 effect 。
-    *queryRoleAction({callback}, { call, put }) {
-      const result = yield call(authRoleServices.queryRole);
-      result.data.map((item) => {
-        item.key = item.id.toString()
-      });
-      yield put({ type: 'queryRoleReducer', ...result }); // 提交到reducers里面的loginData
+    *queryAuthRoleAction({payload, callback}, { call, put }) {
+      const result = yield call(authRoleServices.queryAuthRole, payload);
+      // yield put({ type: 'queryAuthRoleReducer', ...result }); // 提交到reducers里面的loginData
       if (callback && typeof callback === 'function') {
         callback(result); // 返回结果
       }
@@ -59,8 +57,8 @@ export default {
   },
   // 用于修改数据
   reducers: {
-    queryRoleReducer(state, action) {
-      return { data: { roleList: [...action.data] } }
-    }
+    // queryAuthRoleReducer(state, action) {
+    //   return { data: { ...state.data, roleItem: [...action.data] } }
+    // }
   },
 };

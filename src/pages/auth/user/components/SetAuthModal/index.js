@@ -13,7 +13,7 @@ class SetAuthModal extends  Component{
   }
   render() {
     const { getFieldDecorator } = this.props.form;
-    const {visible, confirmLoading, handleCancel} = this.props;
+    const {visible, confirmLoading, handleCancel, roleList, item} = this.props;
     return (
       <div key={0}>
         <Form onSubmit={this.handleSubmit}>
@@ -32,7 +32,8 @@ class SetAuthModal extends  Component{
           >
             <Form.Item label="角色选择">
               {
-                getFieldDecorator('name', {
+                getFieldDecorator('role_id', {
+                  initialValue: item.role_id,
                   rules: [
                     {
                       required: true,
@@ -45,9 +46,9 @@ class SetAuthModal extends  Component{
                     style={{ width: 200 }}
                     placeholder="请选择角色"
                   >
-                    <Option value="jack">管理员</Option>
-                    <Option value="lucy">财务部门</Option>
-                    <Option value="tom">技术部门</Option>
+                    {roleList.map(item => (
+                      <Option key={item.id.toString()}>{item.name}</Option>
+                    ))}
                   </Select>
                 )
               }
@@ -61,8 +62,13 @@ class SetAuthModal extends  Component{
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if (!err) {
-        console.log('handleSubmit form: ', values);
-        this.props.handleOk(values)
+        let form = {
+          id: this.props.item.r_id,
+          role_id: values.role_id,
+          user_id: this.props.item.u_id
+        };
+        // console.log(form);
+        this.props.handleOk(form, this.props.form)
       }
     });
   }

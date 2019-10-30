@@ -2,7 +2,7 @@ import styles from './index.css'
 import React, {Component} from 'react'
 
 import { connect } from 'dva';
-import { Form } from 'antd';
+import { Form, message } from 'antd';
 
 class AdvancedForm extends  Component{
   // 构造函数
@@ -38,6 +38,24 @@ const mapStateToProps = (state, props) => {
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
+    // test: (form, that) => {
+    //   const action = {
+    //     type: 'authRoleModel/configAuthRoleAction',
+    //     payload: form,
+    //     callback: (res) => {
+    //       console.log(res);
+    //       message.destroy();
+    //       if (res.status === 'success') {
+    //         that.setState({
+    //         });
+    //         message.success(res.msg)
+    //       } else {
+    //         message.error(res.msg)
+    //       }
+    //     }
+    //   };
+    //   dispatch(action)
+    // }
   }
 };
 

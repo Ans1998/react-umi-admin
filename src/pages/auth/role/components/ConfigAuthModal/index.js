@@ -5,49 +5,7 @@ import { connect } from 'dva';
 import { Tree, Modal } from 'antd';
 
 const { TreeNode } = Tree;
-const treeData = [
-  {
-    title: '0-0',
-    key: '0-0',
-    children: [
-      {
-        title: '0-0-0',
-        key: '0-0-0',
-        children: [
-          { title: '0-0-0-0', key: '0-0-0-0' },
-          { title: '0-0-0-1', key: '0-0-0-1' },
-          { title: '0-0-0-2', key: '0-0-0-2' },
-        ],
-      },
-      {
-        title: '0-0-1',
-        key: '0-0-1',
-        children: [
-          { title: '0-0-1-0', key: '0-0-1-0' },
-          { title: '0-0-1-1', key: '0-0-1-1' },
-          { title: '0-0-1-2', key: '0-0-1-2' },
-        ],
-      },
-      {
-        title: '0-0-2',
-        key: '0-0-2',
-      },
-    ],
-  },
-  {
-    title: '0-1',
-    key: '0-1',
-    children: [
-      { title: '0-1-0-0', key: '0-1-0-0' },
-      { title: '0-1-0-1', key: '0-1-0-1' },
-      { title: '0-1-0-2', key: '0-1-0-2' },
-    ],
-  },
-  {
-    title: '0-2',
-    key: '0-2',
-  },
-];
+
 class ConfigAuthModal extends  Component{
   // 构造函数
   constructor(props) {
@@ -55,7 +13,7 @@ class ConfigAuthModal extends  Component{
     this.state = {
       expandedKeys: [], // （受控）展开指定的树节点
       autoExpandParent: true, // 是否自动展开父节点
-      checkedKeys: ['1', '2'], // 默认选中
+      checkedKeys: [], // 默认选中
     };
   }
   renderTreeNodes = data =>
@@ -63,14 +21,21 @@ class ConfigAuthModal extends  Component{
       if (item.children) {
         return (
           <TreeNode title={item.name} key={item.key} dataRef={item}>
+            {/*<TreeNode title={item.add} key={'add' + '-'+ item.key}></TreeNode>*/}
+            {/*<TreeNode title={item.delete}  key={'delete' + '-'+ item.key}></TreeNode>*/}
+            {/*<TreeNode title={item.editor}  key={'editor' + '-'+ item.key}></TreeNode>*/}
             {this.renderTreeNodes(item.children)}
           </TreeNode>
         );
       }
-      return <TreeNode title={item.name} key={item.key} dataRef={item} />;
+      return (<TreeNode title={item.name} key={item.key} dataRef={item}>
+        {/*<TreeNode title={item.add} key={'add' + '-'+ item.key}></TreeNode>*/}
+        {/*<TreeNode title={item.delete}  key={'delete' + '-'+ item.key}></TreeNode>*/}
+        {/*<TreeNode title={item.editor}  key={'editor' + '-'+ item.key}></TreeNode>*/}
+      </TreeNode>);
     });
   render() {
-    const {visible, menuList, confirmLoading, handleCancel} = this.props;
+    const {visible, menuList, confirmLoading, handleCancel, roleItem, handleCheck} = this.props;
     return (
       <div>
         <Modal
@@ -85,8 +50,10 @@ class ConfigAuthModal extends  Component{
             onExpand={this.onExpand}
             expandedKeys={this.state.expandedKeys}
             autoExpandParent={this.state.autoExpandParent}
-            onCheck={this.onCheck}
-            checkedKeys={this.state.checkedKeys}
+            onCheck={(checkedKeys) => {
+              handleCheck(checkedKeys)
+            }}
+            checkedKeys={roleItem}
           >
             {this.renderTreeNodes(menuList)}
           </Tree>
@@ -103,13 +70,9 @@ class ConfigAuthModal extends  Component{
       autoExpandParent: false,
     });
   };
-  onCheck = checkedKeys => {
-    console.log('onCheck', checkedKeys);
-    this.setState({ checkedKeys });
-  };
   handleSubmit = () => {
-    console.log(this.state.checkedKeys)
-    // this.props.handleOk()
+    // console.log(this.state.checkedKeys)
+    this.props.handleOk()
   }
 }
 
