@@ -12,7 +12,8 @@ class AuthList extends  Component{
     super(props);
     this.state = {
       tableLoading: true,
-      roleItem: [],
+      queryAuthRole: [],
+      roleItem: {}, // 保存角色信息
       roleItemMenuId: [],
       showConfigAuthModal: false,
       showConfigAuthLoading: false,
@@ -35,7 +36,7 @@ class AuthList extends  Component{
   }
 
   render() {
-    const { roleList, menuList, roleItem } = this.props;
+    const { roleList, menuList } = this.props;
     const columns = [
       {
         title: '角色名称',
@@ -112,12 +113,12 @@ class AuthList extends  Component{
   };
   showConfigAuthModal = (record) => {
     console.log(record);
-    let form = {
-      role_id: record.id
-    };
     this.setState({
       roleItem: record
     });
+    let form = {
+      role_id: record.id
+    };
     message.loading('正在加载', 0);
     this.props.queryAuthRole(form, this);
   };
@@ -152,12 +153,40 @@ class AuthList extends  Component{
     });
   };
   onConfigAuthOk = () => {
-    message.loading('正在加载', 0);
-    let {roleItem, roleItemMenuId} = this.state;
-    console.log(roleItem, roleItemMenuId);
+    // message.loading('正在加载', 0);
+    let {roleItem, roleItemMenuId, queryAuthRole} = this.state;
+    // console.log(roleItem, roleItemMenuId, queryAuthRole);
+    let roleArr = {
+      add: [],
+      detele: [],
+      editor: []
+    };
+    queryAuthRole.forEach((item) => {
+      if (roleItemMenuId.indexOf(item.menu_id.toString()) === -1) {
+        roleArr.detele.push(item)
+      } else {
+        roleArr.editor.push(item)
+      }
+    });
+
+    let queryArr = [];
+    queryAuthRole.forEach((item) => {
+      queryArr.push(item.menu_id.toString());
+    });
+
+    roleItemMenuId.forEach((item) => {
+      if (queryArr.indexOf(item) === -1) {
+        let obj = {
+          menu_id: item,
+          role_id: roleItem.id
+        };
+        roleArr.add.push(obj)
+      }
+    });
+    // console.log(roleArr);
     let form = {
       role_id: roleItem.id,
-      menu_arr: JSON.stringify(roleItemMenuId)
+      menu_arr: JSON.stringify(roleArr),
     };
     console.log(form);
     this.setState({
@@ -188,7 +217,6 @@ class AuthList extends  Component{
 
 const mapStateToProps = (state, props) => {
   return {
-    // roleItem: state.authRoleModel.data.roleItem,
     roleList: state.globalModel.data.roleList,
     menuList: state.globalModel.data.menuList
   }
@@ -301,7 +329,7 @@ const mapDispatchToProps = (dispatch, props) => {
               arr.push(item.menu_id.toString())
             });
             that.setState({
-              // roleItem: res.data,
+              queryAuthRole: res.data,
               roleItemMenuId: arr,
               showConfigAuthModal: true,
             });
