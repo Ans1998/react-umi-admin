@@ -65,6 +65,22 @@ class EditForm extends  Component{
                 )
               }
             </Form.Item>
+            <Form.Item label="菜单图标">
+              {
+                getFieldDecorator('icon', {
+                  initialValue: menuItem.icon,
+                  rules: [
+                    {
+                      required: true,
+                      whitespace: true,
+                      message: '请输入菜单图标!'
+                    }
+                  ],
+                })(
+                  <Input placeholder="请输入菜单图标" />
+                )
+              }
+            </Form.Item>
             <Form.Item label="菜单状态">
               {
                 getFieldDecorator('status', {

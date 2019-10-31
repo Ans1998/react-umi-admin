@@ -25,7 +25,7 @@ class HeaderNav extends  Component{
     // console.log('headerNav----------', this.props)
   }
   render() {
-    const { collapsed, onClickCollapsed, userData, layoutProps } = this.props;
+    const { userInfo, collapsed, onClickCollapsed, layoutProps } = this.props;
     return (
       <Header style={{ background: '#fff', height: '75px', padding: 0, boxShadow: '4px 4px 40px 0 rgba(0,0,0,.05)' }}>
         <div className={styles.HeaderContent}>
@@ -39,7 +39,7 @@ class HeaderNav extends  Component{
             <div className={styles.H_R_list}>
               <HeaderBadge></HeaderBadge>
               <HeaderLanguage></HeaderLanguage>
-              <HeaderUserInfo userData={userData} headerProps={layoutProps}></HeaderUserInfo>
+              <HeaderUserInfo userInfo={userInfo} headerProps={layoutProps}></HeaderUserInfo>
             </div>
           </div>
         </div>

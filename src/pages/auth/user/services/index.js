@@ -1,6 +1,9 @@
 import request from '@utils/request'
 
 export default {
+  queryUserInfo: () => {
+    return request.post('/api/user/info')
+  },
   queryUser: () => {
     return request.post('/api/user/query')
   },

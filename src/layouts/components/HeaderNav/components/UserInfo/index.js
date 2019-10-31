@@ -30,7 +30,7 @@ class HeaderUserInfo extends  Component{
     )
   };
   render() {
-    const { userData } = this.props;
+    const { userInfo } = this.props;
     return (
       <Popover content={this.userInfoPopoverRender()}
                visible={this.state.userInfoVisible}
@@ -39,8 +39,8 @@ class HeaderUserInfo extends  Component{
       >
         <div className={styles.H_R_L_right}>
           <span className={styles.H_R_L_R_hint}>Hi,</span>
-          <span className={styles.H_R_L_R_userName}>userData.userInfo.name</span>
-          {/*<Avatar src={userData.userInfo.avatar} size={40} icon="user" />*/}
+          <span className={styles.H_R_L_R_userName}>{userInfo.name}</span>
+          <Avatar src="@/assets/img/4.png" size={40} icon="user" />
         </div>
       </Popover>
     );

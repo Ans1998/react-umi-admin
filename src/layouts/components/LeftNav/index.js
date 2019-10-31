@@ -8,134 +8,6 @@ import router from 'umi/router';
 const { SubMenu } = Menu;
 const { Sider } = Layout;
 
-const menuSrc = [
-  {
-    key: '/',
-    icon: 'pie-chart',
-    title: '首页',
-  },
-  {
-    key: '/test',
-    icon: 'tags',
-    title: '测试页'
-  },
-  {
-    key: '/menu',
-    icon: 'user',
-    title: '菜单管理',
-    children: [
-      {
-        key: '/menu/add',
-        title: '添加菜单'
-      },
-      {
-        key: '/menu/list',
-        title: '菜单列表'
-      }
-    ]
-  },
-  {
-    key: '/auth',
-    icon: 'user',
-    title: '权限管理',
-    children: [
-      {
-        key: '/auth/role/list',
-        title: '角色列表'
-      },
-      {
-        key: '/auth/user/list',
-        title: '用户列表'
-      }
-    ]
-  },
-  {
-    key: '/user',
-    icon: 'user',
-    title: '用户管理',
-    children: [
-      {
-        key: '/user/admin',
-        title: '管理员列表'
-      },
-      {
-        key: '/user/list',
-        title: '用户列表'
-      }
-      ]
-  },
-  {
-    key: '/form',
-    icon: 'form',
-    title: '表单页',
-    children: [
-      {
-        key: '/form/basics-form',
-        title: '基础表单'
-      },
-      {
-        key: '/form/advanced-form',
-        title: '高级表单'
-      }
-    ]
-  },
-  {
-    key: '/list',
-    icon: 'form',
-    title: '列表页',
-    children: [
-      {
-        key: '/list/basics-list',
-        title: '基础列表'
-      },
-      {
-        key: '/list/advanced-list',
-        title: '高级列表'
-      }
-    ]
-  },
-  {
-    key: '/details',
-    icon: 'profile',
-    title: '详情页',
-    children: [
-      {
-        key: '/details/basics-details',
-        title: '基础详情'
-      },
-      {
-        key: '/details/advanced-details',
-        title: '高级详情'
-      }
-    ]
-  },
-  {
-    key: '/order',
-    icon: 'shopping',
-    title: '订单管理',
-    children: [
-      {
-        key: '/order/list',
-        title: '订单列表'
-      },
-      {
-        key: '/order/add',
-        title: '新增订单',
-        children: [
-          {
-            key: '/order/add/shop',
-            title: '商品订单'
-          },
-          {
-            key: '/order/add/device',
-            title: '设备订单'
-          }
-          ]
-      }
-      ]
-  }
-  ];
-
 class LeftNav extends  Component{
   // 构造函数
   constructor(props) {
@@ -168,20 +40,20 @@ class LeftNav extends  Component{
   renderMenu(menuData){
     return menuData.map((menu) => {
       if (menu.children) {
-        return (<SubMenu key={menu.key}
+        return (<SubMenu key={menu.url}
           title={
           <span>
            {menu.icon ? <Icon type={menu.icon} /> : null}
-          <span>{menu.title}</span>
+          <span>{menu.name}</span>
           </span>
         }>
             {/*递归*/}
             {this.renderMenu(menu.children)}
           </SubMenu>)
       } else {
-        return (<Menu.Item key={menu.key}>
+        return (<Menu.Item key={menu.url}>
           {menu.icon ? <Icon type={menu.icon} /> : null}
-          <span>{menu.title}</span>
+          <span>{menu.name}</span>
         </Menu.Item>)
       }
     })
@@ -222,7 +94,7 @@ class LeftNav extends  Component{
     )
   };
   render() {
-    const {collapsed} = this.props;
+    const {collapsed, userMenuList} = this.props;
     return (
         <Sider trigger={null}
                collapsible
@@ -254,7 +126,7 @@ class LeftNav extends  Component{
             onOpenChange={this.handleMenuSubChange}
           >
             {
-             this.renderMenu(menuSrc)
+             this.renderMenu(userMenuList)
             }
           </Menu>
           {

@@ -227,7 +227,7 @@ const mapDispatchToProps = (dispatch, props) => {
     queryMenuAction: () => {
       const action = {
         type: 'globalModel/queryMenuAction',
-        payload: { filter: 'true', isAuth: 'true' },
+        payload: { filter: 'true' },
         callback: (res) => {
           console.log('----callback---', res);
         }

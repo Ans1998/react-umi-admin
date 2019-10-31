@@ -27,12 +27,10 @@ class BasicLayout extends  Component{
   }
   // 组件渲染之前
   componentWillMount() {
-    // console.log('layoutModel - componentWillMount', this.props);
-    // this.props.getUserInfo()
   }
   // 组件已经被渲染到 DOM 中后运行
   componentDidMount() {
-    // console.log('layoutModel - componentDidMount', this.props);
+    this.props.getUserInfo(this)
     // 监听屏幕宽度
     // if (document.body.clientWidth <= 400) {
     //   this.setState({
@@ -48,6 +46,7 @@ class BasicLayout extends  Component{
     return (<Empty/>)
   };
   render() {
+    const {userInfo, userMenuList} = this.props;
     // 面包屑数据赋值
     let routes = [];
     this.props.route.routes.forEach((item) => {
@@ -65,10 +64,10 @@ class BasicLayout extends  Component{
       <ConfigProvider locale={configLocale} renderEmpty={this.publicEmpty}>
       <Layout style={{ minHeight: '100vh' }}>
         {/*左边导航栏*/}
-        <LeftNav collapsed={this.state.collapsed} data={this.props}></LeftNav>
+        <LeftNav userMenuList={userMenuList} collapsed={this.state.collapsed} data={this.props}></LeftNav>
         <Layout>
           {/*头部*/}
-          <HeaderNav layoutProps={this.props} collapsed={this.state.collapsed} onClickCollapsed={this.handleHeaderNavCollapsedClick}></HeaderNav>
+          <HeaderNav userInfo={userInfo} layoutProps={this.props} collapsed={this.state.collapsed} onClickCollapsed={this.handleHeaderNavCollapsedClick}></HeaderNav>
           {/*面包屑*/}
           <Breadcrumb  style={{ margin: '24px 0 0 18px' }}>
             {
@@ -114,14 +113,29 @@ class BasicLayout extends  Component{
 
 const mapStateToProps = (state, props) => {
   return {
+    userMenuList: state.layoutModel.data.userMenuList,
+    userInfo: state.globalModel.data.userInfo
   }
 };
 
 const mapDispatchToProps = (dispatch, props) => {
   return {
-    getUserInfo: () => {
+    getUserInfo: (that) => {
       const action = {
-        type: 'layoutModel/getUserInfo'
+        type: 'globalModel/queryUserInfoAction',
+        callback: (res) => {
+          that.props.getUserMenu();
+          console.log('----callback---', res);
+        }
+      };
+      dispatch(action);
+    },
+    getUserMenu: () => {
+      const action = {
+        type: 'layoutModel/queryUserMenuAction',
+        callback: (res) => {
+          console.log('----callback---', res);
+        }
       };
       dispatch(action);
     }

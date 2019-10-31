@@ -3,7 +3,7 @@ import React, {Component} from 'react'
 import { connect } from 'dva';
 import EditForm from './components/EditForm';
 import AddForm from './components/AddForm'
-import { Card, Divider, Popconfirm, Table, message, Button, Tag } from 'antd';
+import { Card, Divider, Popconfirm, Table, message, Button, Tag, Icon } from 'antd';
 import { sleep } from '@utils/sleep'
 // import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 import router from 'umi/router';
@@ -44,6 +44,14 @@ class MenuList extends  Component{
           <a onClick={() => {
             router.push(text)
           }}>{text}</a>
+        )
+      },
+      {
+        title: '菜单图标',
+        dataIndex: 'icon',
+        key: 'icon',
+        render: (text, record) => (
+          text ? <Icon onClick={this.showEditProductModal.bind(this, record)} type={text}></Icon> : null
         )
       },
       {
@@ -174,7 +182,7 @@ const mapDispatchToProps = (dispatch, props) => {
     queryMenuAction: (that) => {
       const action = {
         type: 'globalModel/queryMenuAction',
-        payload: { filter: 'true', isAuth: 'false' },
+        payload: { filter: 'true' },
         callback: (res) => {
           that.setState({
             tableLoading: false
