@@ -58,8 +58,8 @@ class AuthList extends  Component{
       },
       {
         title: '最近编辑时间',
-        dataIndex: 'updateTime',
-        key: 'updateTime',
+        dataIndex: 'update_time',
+        key: 'update_time',
       },
       {
         title: '操作',

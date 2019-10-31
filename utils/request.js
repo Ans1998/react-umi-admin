@@ -1,5 +1,5 @@
 import { extend } from 'umi-request';
-// import { notification } from 'antd';
+import { message } from 'antd';
 import qs from 'qs';
 import {Base64} from 'js-base64'
 import router from 'umi/router';
@@ -73,6 +73,9 @@ const responseFilter = (response) => {
       let url = Base64.encode(window.location.hash.substring(1));
       router.push('/login?ref=' + url);
       break;
+    case 500:
+      message.error(response.msg);
+      return response;
     default:
       return response;
       // return new Promise((resolve, reject) => {
