@@ -6,6 +6,7 @@ module.exports = [
     Routes: ['./src/routes/token/index.js'],
     routes: [
       { path: '/auth/role/list', component: './auth/role/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -23,6 +24,7 @@ module.exports = [
         ]
       },
       { path: '/auth/user/list', component: './auth/user/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -40,6 +42,7 @@ module.exports = [
         ]
       },
       { path: '/menu/add', component: './menu/add/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -57,6 +60,7 @@ module.exports = [
         ]
       },
       { path: '/menu/list', component: './menu/list/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -92,6 +96,7 @@ module.exports = [
         ]
       },
       { path: '/form/advanced-form', component: './form/advanced/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -109,6 +114,7 @@ module.exports = [
         ]
       },
       { path: '/list/advanced-list', component: './list/advanced/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -126,6 +132,7 @@ module.exports = [
         ]
       },
       { path: '/list/basics-list', component: './list/basics/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -143,6 +150,7 @@ module.exports = [
         ]
       },
       { path: '/details/basics-details', component: './details/basics/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
@@ -160,6 +168,7 @@ module.exports = [
         ]
       },
       { path: '/details/advanced-details', component: './details/advanced/index/',
+        Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {

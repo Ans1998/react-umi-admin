@@ -8,12 +8,17 @@ class AuthRoute extends  Component{
     this.state = {
     };
   }
+  // 组件已经被渲染到 DOM 中后运行
+  componentDidMount() {
+    console.log(this.props)
+  }
 
   render() {
     return (
       <div>
-        <div>PrivateRoute (routes/PrivateRoute.js)</div>
-        {this.props.children}
+       {
+         this.props.children
+       }
       </div>
     );
   }

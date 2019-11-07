@@ -29,8 +29,8 @@ import router from 'umi/router';
 
 const extendRequest = extend({
   // errorHandler,
-  // prefix: 'http://localhost:7001',
-  prefix: 'http://192.168.2.111:7001',
+  prefix: 'http://localhost:7001',
+  // prefix: 'http://192.168.2.111:7001',
   timeout: 1000
 });
 // request 拦截器, 改变url 或 options.

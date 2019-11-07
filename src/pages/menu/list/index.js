@@ -12,7 +12,7 @@ class MenuList extends  Component{
   constructor(props) {
     super(props);
     this.state = {
-      tableLoading: false,
+      tableLoading: true,
 
       editFormLoading: false,
       editFormVisible: false,

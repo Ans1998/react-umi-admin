@@ -91,7 +91,8 @@ class BasicLayout extends  Component{
             }}
           >
             <TransitionGroup>
-              <CSSTransition key={this.props.location.pathname} classNames="fade" timeout={300}>
+              {/*key={this.props.location.pathname}*/}
+              <CSSTransition classNames="fade" timeout={300} appear={true} >
                 { this.props.children }
               </CSSTransition>
             </TransitionGroup>

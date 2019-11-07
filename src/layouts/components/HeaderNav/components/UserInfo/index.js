@@ -83,6 +83,9 @@ const mapDispatchToProps = (dispatch, props) => {
           } else {
             message.destroy();
             message.warning(res.msg);
+            localStorage.removeItem('token');
+            let url = Base64.encode(headerProps.location.pathname + headerProps.location.search);
+            router.push('/login?ref=' + url);
             // localStorage.removeItem('token');
             // let url = Base64.encode(headerProps.location.pathname + headerProps.location.search);
             // router.push('/login?ref=' + url);
