@@ -70,9 +70,11 @@ const responseFilter = (response) => {
   switch (response.code) {
     case 502:
     case 503:
-      localStorage.removeItem('token');
-      let url = Base64.encode(window.location.hash.substring(1));
-      router.push('/login?ref=' + url);
+      if (window.location.href.indexOf('login') === -1) {
+        localStorage.removeItem('token');
+        let url = Base64.encode(window.location.hash.substring(1));
+        router.push('/login?ref=' + url);
+      }
       break;
     case 500:
       message.error(response.msg);

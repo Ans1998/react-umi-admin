@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0a9867fc-85ac-4205-b935-88b47c075602" name="Default Changelist" comment="" />
+    <list default="true" id="0a9867fc-85ac-4205-b935-88b47c075602" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/utils/request.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -14,10 +16,13 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/routes/config/index.js">
+        <entry file="file://$PROJECT_DIR$/utils/request.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5936">
-              <caret line="7" column="24" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="448">
+              <caret line="76" column="45" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="45" />
+              <folding>
+                <element signature="e#0#37#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -97,7 +102,6 @@
         <option value="$PROJECT_DIR$/src/pages/menu/list/components/EditForm/index.js" />
         <option value="$PROJECT_DIR$/src/pages/login/index/models/index.js" />
         <option value="$PROJECT_DIR$/src/layouts/components/HeaderNav/components/UserInfo/index.js" />
-        <option value="$PROJECT_DIR$/utils/request.js" />
         <option value="$PROJECT_DIR$/src/layouts/index.css" />
         <option value="$PROJECT_DIR$/src/pages/menu/list/index.js" />
         <option value="$PROJECT_DIR$/src/global.js" />
@@ -109,9 +113,10 @@
         <option value="$PROJECT_DIR$/src/layouts/index.js" />
         <option value="$PROJECT_DIR$/src/pages/qrCode/create/models/index.js" />
         <option value="$PROJECT_DIR$/src/pages/qrCode/create/index.js" />
-        <option value="$PROJECT_DIR$/src/routes/config/index.js" />
         <option value="$PROJECT_DIR$/src/pages/richText/braft/models/index.js" />
         <option value="$PROJECT_DIR$/src/pages/richText/braft/index.js" />
+        <option value="$PROJECT_DIR$/src/routes/config/index.js" />
+        <option value="$PROJECT_DIR$/utils/request.js" />
       </list>
     </option>
   </component>
@@ -157,13 +162,6 @@
               <item name="umi" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="routes" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
-              <item name="umi" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="routes" type="462c0819:PsiDirectoryNode" />
-              <item name="config" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="umi" type="b2602c69:ProjectViewProjectNode" />
@@ -275,12 +273,12 @@
       <workItem from="1572482966289" duration="15162000" />
       <workItem from="1573088699396" duration="7324000" />
       <workItem from="1573118371175" duration="1041000" />
-      <workItem from="1573174632093" duration="6203000" />
+      <workItem from="1573174632093" duration="6910000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="490651000" />
+    <option name="totallyTimeSpent" value="491358000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -581,16 +579,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/request.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="224">
-          <caret line="32" column="31" lean-forward="true" selection-start-line="32" selection-start-column="31" selection-end-line="32" selection-end-column="31" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/components/HeaderNav/components/UserInfo/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2436">
@@ -755,8 +743,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/config/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5936">
-          <caret line="7" column="24" selection-start-line="7" selection-start-column="16" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="308">
+          <caret line="230" column="14" lean-forward="true" selection-start-line="227" selection-start-column="9" selection-end-line="230" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="448">
+          <caret line="76" column="45" selection-start-line="76" selection-start-column="30" selection-end-line="76" selection-end-column="45" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
