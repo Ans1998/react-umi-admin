@@ -225,10 +225,10 @@ module.exports = [
         Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
         breadcrumbArr: [
-          {
-            path: '',
-            breadcrumbName: '首页',
-          }
+          // {
+          //   path: '',
+          //   breadcrumbName: '首页',
+          // }
         ]
       },
       // { path: '/order', component: './order/pages/orders/', Routes: ['./src/routes/auth/index.js'] , breadcrumbArr: [
