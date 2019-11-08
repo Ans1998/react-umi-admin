@@ -5,6 +5,42 @@ module.exports = [
     component: './../layouts/',
     Routes: ['./src/routes/token/index.js'],
     routes: [
+      { path: '/richText/braft', component: './richText/braft/index/',
+        Routes: ['./src/routes/auth/index.js'],
+        authority: ['admin', 'user'],
+        breadcrumbArr: [
+          {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
+            path: '',
+            breadcrumbName: '富文本',
+          },
+          {
+            path: '',
+            breadcrumbName: 'braft编辑器',
+          }
+        ]
+      },
+      { path: '/qrCode/create', component: './qrCode/create/index/',
+        Routes: ['./src/routes/auth/index.js'],
+        authority: ['admin', 'user'],
+        breadcrumbArr: [
+          {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
+            path: '',
+            breadcrumbName: '二维码管理',
+          },
+          {
+            path: '',
+            breadcrumbName: '二维码生成',
+          }
+        ]
+      },
       { path: '/auth/role/list', component: './auth/role/index/',
         Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
