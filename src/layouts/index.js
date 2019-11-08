@@ -11,7 +11,7 @@ import Login from '../pages/login/index/index'
 
 import { connect } from 'dva';
 
-import { Layout, Breadcrumb, ConfigProvider, Empty, message } from 'antd';
+import { Layout, Breadcrumb, ConfigProvider, Empty } from 'antd';
 // import configLocale from 'antd/es/locale/en_US'; // 英文
 import configLocale from 'antd/es/locale/zh_CN'; // 中文
 

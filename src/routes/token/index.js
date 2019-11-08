@@ -42,7 +42,7 @@ const mapStateToProps = (state, props) => {
   return {
     userData: () => {
       if ('loginModel' in state) {
-        return state.loginModel.data
+        return
       } else {
         return {}
       }

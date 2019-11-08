@@ -1,6 +1,7 @@
 import menuAddService from '@/pages/menu/add/services/index';
 import authRoleServices from '@/pages/auth/role/services';
 import authUserServices from '@/pages/auth/user/services';
+import layoutServices from '@/layouts/services';
 
 let arr = [];
 const filterMenuData = (data) => {
@@ -46,6 +47,7 @@ export default {
   state: {
     // 初始数据
     data: {
+      authMenuList: [],
       menuList: [],
       roleList: [],
       userInfo: {}
@@ -67,9 +69,9 @@ export default {
       // 数据处理(菜单列表)
       if (payload && 'filter' in payload && payload.filter === 'true') {
         response.data = filterMenuData(response.data);
+        yield put({ type: 'queryMenuReducer', ...response }); // 提交到reducers里面的
       }
-      console.log(response);
-      yield put({ type: 'queryMenuReducer', ...response }); // 提交到reducers里面的
+      // console.log(response);
       if (callback && typeof callback === 'function') {
         callback(response); // 返回结果
       }
@@ -93,9 +95,20 @@ export default {
       }
       // console.log(result)
     },
+    *queryUserMenuInfoAction({callback}, { call, put }) {
+      const response = yield call (layoutServices.getUserMenu);
+      yield put({ type: 'queryAuthMenuReducer', ...response }); // 提交到reducers里面的
+      if (callback && typeof callback === 'function') {
+        callback(response); // 返回结果
+      }
+      // console.log(result)
+    },
   },
   // 用于修改数据
   reducers: {
+    queryAuthMenuReducer(state, action) {
+      return { data: { ...state.data, authMenuList: [...action.data] } }
+    },
     queryMenuReducer(state, action) {
       return { data: { ...state.data, menuList: [...action.data] } }
     },

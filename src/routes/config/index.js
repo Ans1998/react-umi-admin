@@ -232,6 +232,10 @@ module.exports = [
         authority: ['admin', 'user'],
         breadcrumbArr: [
           {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
             path: '',
             breadcrumbName: '测试页',
           },
