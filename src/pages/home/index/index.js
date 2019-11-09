@@ -32,7 +32,7 @@ const ButtonGroup = Button.Group;
 const data = [
   {
     year: "1 月",
-    sales: 38
+    sales: 100
   },
   {
     year: "2 月",
