@@ -5,6 +5,42 @@ module.exports = [
     component: './../layouts/',
     Routes: ['./src/routes/token/index.js'],
     routes: [
+      { path: '/reptile/file/list', component: './reptile/captureFileList/index/',
+        Routes: ['./src/routes/auth/index.js'],
+        authority: ['admin', 'user'],
+        breadcrumbArr: [
+          {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
+            path: '',
+            breadcrumbName: '爬虫管理',
+          },
+          {
+            path: '',
+            breadcrumbName: '文件列表',
+          }
+        ]
+      },
+      { path: '/reptile/capture/data', component: './reptile/captureData/index/',
+        Routes: ['./src/routes/auth/index.js'],
+        authority: ['admin', 'user'],
+        breadcrumbArr: [
+          {
+            path: '/',
+            breadcrumbName: '首页',
+          },
+          {
+            path: '',
+            breadcrumbName: '爬虫管理',
+          },
+          {
+            path: '',
+            breadcrumbName: '抓取数据',
+          }
+        ]
+      },
       { path: '/richText/braft', component: './richText/braft/index/',
         Routes: ['./src/routes/auth/index.js'],
         authority: ['admin', 'user'],
