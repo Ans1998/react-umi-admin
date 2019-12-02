@@ -73,7 +73,7 @@ const responseFilter = (response) => {
       if (window.location.href.indexOf('login') === -1) {
         localStorage.removeItem('token');
         let url = Base64.encode(window.location.hash.substring(1));
-        router.push('/login?ref=' + url);
+        router.replace('/login?ref=' + url);
       }
       break;
     case 500:
