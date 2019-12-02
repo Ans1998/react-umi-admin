@@ -7,3 +7,13 @@
   bottom: 6px;
   right: 25px;
 }
+
+.alertInfo {
+  height: 40px;
+  line-height: 40px;
+  padding: 0 10px;
+  margin-bottom: 12px;
+  background-color: #e6f7ff;
+  border: 1px solid #91d5ff;
+  border-radius: 3px;
+}
