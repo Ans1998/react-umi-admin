@@ -2,7 +2,7 @@ import styles from './index.css'
 import React, {Component} from 'react'
 
 import { connect } from 'dva';
-import { Table, message, Card, Button, Popconfirm, Tag } from 'antd';
+import { Table, message, Card, Button, Popconfirm, Tag, Badge, notification } from 'antd';
 import { sleep } from '@utils/sleep'
 import AddForm from './components/AddForm';
 
@@ -41,17 +41,22 @@ const mapDispatchToProps = (dispatch, props) => {
           console.log(res);
           await sleep(1800);
           message.destroy();
+          // notification.info({
+          //   message: res.msg,
+          //   description: res.data.content,
+          //   duration: 4.5
+          // });
           that.setState({
             addFormLoading: false,
             addFormVisible: false
           });
           propsForm.resetFields();
           that.props.queryCaptureRecordAction(that);
-          // if (res.status === 'success') {
-          //   message.success(res.msg);
-          // } else {
-          //   message.error(res.msg)
-          // }
+          if (res.status === 'success') {
+            message.success(res.msg);
+          } else {
+            message.error(res.msg)
+          }
         }
       };
       dispatch(action)
@@ -121,9 +126,16 @@ class CaptureData extends  Component{
           title: '抓取状态',
           dataIndex: 'status',
           key: 'status',
-          render: (text, record) => (
-            text === 1 ? (<Tag color="#87d068">完成</Tag>) : (<Tag color="#f50">进行中</Tag>)
-          ),
+          render: (text, record) => {
+            switch (text) {
+              case 0:
+                return (<Badge status="processing" text="进行中" />);
+              case 1:
+                return (<Tag color="#87d068">完成</Tag>);
+              case 2:
+                return (<Tag color="#f50">异常</Tag>);
+            }
+          },
         },
         {
           title: '操作',

@@ -11,11 +11,45 @@ import Login from '../pages/login/index/index'
 
 import { connect } from 'dva';
 
-import { Layout, Breadcrumb, ConfigProvider, Empty } from 'antd';
+import { Layout, Breadcrumb, ConfigProvider, Empty, notification } from 'antd';
 // import configLocale from 'antd/es/locale/en_US'; // 英文
 import configLocale from 'antd/es/locale/zh_CN'; // 中文
 
+import {socket} from  '@utils/socket';
+// 连接成功
+socket.on('connect', (res) => {
+  console.log('----与服务端连接成功----', res);
+});
+// 监听
+socket.on('res', obj => {
+  console.log('监听到服务端的信息 ---packet----', obj);
+  if (obj.status === 'success' && obj.code === '200') {
+    notification.success({
+      message: obj.msg,
+      description: obj.data.content,
+      duration: 4.5
+    });
+  } else {
+    notification.error({
+      message: obj.msg,
+      description: obj.data.content,
+      duration: 4.5
+    });
+  }
+});
+// test = () => {
+//   console.log('----socket----');
+//   let obj = {
+//     code: 200,
+//     status: 'success',
+//     msg: '测试发送数据',
+//     data: {},
+//   };
+//   socket.emit('res', obj);
+// };
+
 const { Content } = Layout;
+
 
 class BasicLayout extends  Component{
   // 构造函数

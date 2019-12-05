@@ -2,7 +2,7 @@ import styles from './index.css'
 import React, {Component} from 'react'
 import { connect } from 'dva';
 import {
-  Spin, Icon, Button, message, Tree
+  Spin, Icon, Button, message, Tree, notification
 } from 'antd';
 import { sleep } from '@utils/sleep'
 
@@ -163,11 +163,11 @@ class captureFileList extends  Component{
             <span style={{marginLeft: 10}}>已选择
               <a style={{margin: '0 5px'}}>{checkedKeys.length}</a>
               项</span>
-            <a style={{marginLeft: 10}} onClick={() => {
-              this.setState({
-                checkedKeys: [],
-              })
-            }}>清空</a>
+            {/*<a style={{marginLeft: 10}} onClick={() => {*/}
+              {/*this.setState({*/}
+                {/*checkedKeys: [],*/}
+              {/*})*/}
+            {/*}}>清空</a>*/}
           </div>
 
           <Tree
@@ -328,7 +328,12 @@ const mapDispatchToProps = (dispatch, props) => {
             loading: false
           });
           if (res.status === 'success') {
-            message.success(res.msg)
+            message.success(res.msg);
+            // notification.info({
+            //   message: res.msg,
+            //   description: res.data.content,
+            //   duration: 4.5
+            // });
           } else {
             message.error(res.msg)
           }
