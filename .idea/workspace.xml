@@ -18,7 +18,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="383">
-                <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+                <caret line="20" selection-start-line="20" selection-end-line="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -174,15 +174,15 @@
     <property name="ts.external.directory.path" value="D:\编程工具\WebStorm 2018.3.5\plugins\JavaScriptLanguage\jsLanguageServicesImpl\external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\exerciseCode\js\react\umi\src\pages\login\index\components" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\exerciseCode\js\react\umi\src\pages\test\pages\index" />
       <recent name="F:\exerciseCode\js\react\umi\src\pages\index\pages\index" />
       <recent name="F:\exerciseCode\js\react\umi\src\pages\login\pages\index" />
       <recent name="F:\exerciseCode\js\react\umi\src\pages\orders\pages\index" />
       <recent name="F:\exerciseCode\js\react\umi\src\pages\users\pages\adminUser" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\exerciseCode\js\react\umi\src\pages\login\index\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -274,12 +274,12 @@
       <workItem from="1575593713477" duration="1131000" />
       <workItem from="1575680960842" duration="1405000" />
       <workItem from="1575688854892" duration="2307000" />
-      <workItem from="1575871000995" duration="796000" />
+      <workItem from="1575871000995" duration="1207000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="585764000" />
+    <option name="totallyTimeSpent" value="586175000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -782,7 +782,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="383">
-            <caret line="20" lean-forward="true" selection-start-line="20" selection-end-line="20" />
+            <caret line="20" selection-start-line="20" selection-end-line="20" />
           </first_editor>
           <second_editor />
         </state>

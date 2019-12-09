@@ -18,3 +18,8 @@ $ yarn start
 ```
 
 ### 效果图
+![项目演示](https://raw.githubusercontent.com/Aliceco/react-umi-admin/master/src/assets/demo/0.png)
+![项目演示](https://raw.githubusercontent.com/Aliceco/react-umi-admin/master/src/assets/demo/1.gif)
+![项目演示](https://raw.githubusercontent.com/Aliceco/react-umi-admin/master/src/assets/demo/2.gif)
+![项目演示](https://raw.githubusercontent.com/Aliceco/react-umi-admin/master/src/assets/demo/2-1.png)
+![项目演示](https://raw.githubusercontent.com/Aliceco/react-umi-admin/master/src/assets/demo/2-2.png)
