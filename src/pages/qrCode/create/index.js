@@ -1,4 +1,4 @@
-import styles from './index.css'
+// import styles from './index.css'
 import React, {Component} from 'react'
 
 import { connect } from 'dva';
@@ -41,9 +41,6 @@ class QrCodeCreate extends  Component{
     return (
       <div style={{ background: '#fff'}}>
         <Card title="二维码配置" bordered={false}>
-
-          <view onClick={this.test}>测试socket</view>
-
           <Form>
             <Form.Item label="二维码生成内容">
               <Input placeholder="请输入二维码生成内容" onChange={(e) => {

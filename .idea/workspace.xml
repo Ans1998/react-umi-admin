@@ -2,13 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0a9867fc-85ac-4205-b935-88b47c075602" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/utils/socket.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/layouts/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/layouts/index.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/pages/qrCode/create/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/qrCode/create/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/reptile/captureData/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/reptile/captureData/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/pages/reptile/captureFileList/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/pages/reptile/captureFileList/index.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -24,11 +19,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/qrCode/create/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
-              <folding>
-                <element signature="e#0#32#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="28">
+              <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
             </state>
           </provider>
         </entry>
@@ -45,8 +37,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/layouts/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="177">
-              <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+            <state relative-caret-position="451">
+              <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
               <folding>
                 <element signature="e#36#74#0" expanded="true" />
               </folding>
@@ -57,8 +49,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/pages/reptile/captureFileList/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="980">
-              <caret line="335" column="18" lean-forward="true" selection-start-line="335" selection-start-column="18" selection-end-line="335" selection-end-column="18" />
+            <state relative-caret-position="9156">
+              <caret line="335" column="18" selection-start-line="335" selection-start-column="18" selection-end-line="335" selection-end-column="18" />
               <folding>
                 <element signature="e#0#32#0" expanded="true" />
                 <marker date="1575528031969" expanded="true" signature="9263:9415" ph="..." />
@@ -75,8 +67,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/utils/request.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="40" column="95" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="95" />
+            <state relative-caret-position="1008">
+              <caret line="40" column="95" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="95" />
               <folding>
                 <element signature="e#0#37#0" expanded="true" />
               </folding>
@@ -174,10 +166,10 @@
         <option value="$PROJECT_DIR$/src/pages/reptile/captureFileList/components/PushStorageForm/index.js" />
         <option value="$PROJECT_DIR$/utils/request.js" />
         <option value="$PROJECT_DIR$/utils/socket.js" />
-        <option value="$PROJECT_DIR$/src/pages/qrCode/create/index.js" />
         <option value="$PROJECT_DIR$/src/pages/reptile/captureData/index.js" />
         <option value="$PROJECT_DIR$/src/pages/reptile/captureFileList/index.js" />
         <option value="$PROJECT_DIR$/src/layouts/index.js" />
+        <option value="$PROJECT_DIR$/src/pages/qrCode/create/index.js" />
       </list>
     </option>
   </component>
@@ -187,7 +179,7 @@
     <other-services-enabled>true</other-services-enabled>
     <auto-save>true</auto-save>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="1">
     <option name="x" value="-10" />
     <option name="y" value="-10" />
     <option name="width" value="1940" />
@@ -230,6 +222,14 @@
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="pages" type="462c0819:PsiDirectoryNode" />
               <item name="qrCode" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="umi" type="b2602c69:ProjectViewProjectNode" />
+              <item name="umi" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="pages" type="462c0819:PsiDirectoryNode" />
+              <item name="qrCode" type="462c0819:PsiDirectoryNode" />
+              <item name="create" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="umi" type="b2602c69:ProjectViewProjectNode" />
@@ -376,12 +376,15 @@
       <workItem from="1575273763913" duration="2392000" />
       <workItem from="1575363775038" duration="698000" />
       <workItem from="1575420737619" duration="12021000" />
-      <workItem from="1575507101606" duration="10490000" />
+      <workItem from="1575507101606" duration="11423000" />
+      <workItem from="1575593713477" duration="1131000" />
+      <workItem from="1575680960842" duration="1405000" />
+      <workItem from="1575688854892" duration="2307000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="579192000" />
+    <option name="totallyTimeSpent" value="584968000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -393,10 +396,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1552" height="840" extended-state="0" />
+    <frame x="-8" y="-8" width="1552" height="840" extended-state="1" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.17875989" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17875989" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -832,33 +835,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/sleep.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/request.js">
+    <entry file="file://$PROJECT_DIR$/utils/socket.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="40" column="95" lean-forward="true" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="95" />
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state>
+          <caret column="32" selection-start-column="16" selection-end-column="32" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/qrCode/create/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#32#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/socket.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="32" selection-start-column="16" selection-end-column="32" />
+        <state relative-caret-position="28">
+          <caret line="1" column="35" selection-start-line="1" selection-start-column="35" selection-end-line="1" selection-end-column="35" />
         </state>
       </provider>
     </entry>
@@ -871,8 +858,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/pages/reptile/captureFileList/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="980">
-          <caret line="335" column="18" lean-forward="true" selection-start-line="335" selection-start-column="18" selection-end-line="335" selection-end-column="18" />
+        <state relative-caret-position="9156">
+          <caret line="335" column="18" selection-start-line="335" selection-start-column="18" selection-end-line="335" selection-end-column="18" />
           <folding>
             <element signature="e#0#32#0" expanded="true" />
             <marker date="1575528031969" expanded="true" signature="9263:9415" ph="..." />
@@ -880,10 +867,23 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/utils/sleep.js">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/request.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1008">
+          <caret line="40" column="95" selection-start-line="40" selection-start-column="14" selection-end-line="40" selection-end-column="95" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/layouts/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="177">
-          <caret line="25" column="55" lean-forward="true" selection-start-line="25" selection-start-column="55" selection-end-line="25" selection-end-column="55" />
+        <state relative-caret-position="451">
+          <caret line="37" column="3" selection-start-line="37" selection-start-column="3" selection-end-line="37" selection-end-column="3" />
           <folding>
             <element signature="e#36#74#0" expanded="true" />
           </folding>
