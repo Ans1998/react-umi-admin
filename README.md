@@ -11,6 +11,9 @@
 $ {'code': '200', 'status': 'success', 'msg': '操作成功', 'data': {}}
 ```
 
+### 持续集成（前端自动化部署）
+http://note.youdao.com/noteshare?id=c2ae61a1d448bb3bcbe00a77327916d0&sub=C0DB198D492648EF96C28DA6E1F363F0
+
 ### react-umi项目
 https://github.com/Aliceco/react-umi-admin
 ### egg-api项目
