@@ -20,7 +20,8 @@ https://github.com/Aliceco/react-umi-admin
 https://github.com/Aliceco/umi-egg-api
 ### falsk-api项目
 https://github.com/Aliceco/umi-falsk-api
-
+### flutter跨平台app项目
+https://github.com/Aliceco/device_lease
 ### 运行
 
 ```bash
